@@ -169,32 +169,24 @@ body {
     max-width: 100%;
 }
 
+/* --- ВСТУПЛЕНИЕ (над фото) --- */
 .project-intro {
     max-width: 900px;
-    margin: 0 auto 80px;
+    margin: 0 auto 60px;
     padding: 0 30px;
     padding-top: 70px;
     text-align: center;
-}
-
-.badge {
-    background: #eaeaea;
-    padding: 4px 20px;
-    border-radius: 30px;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    color: #555;
 }
 
 .project-intro h2 {
     font-size: 3.5rem;
     font-weight: 300;
     letter-spacing: 6px;
-    margin: 15px 0 20px;
+    margin-bottom: 20px;
 }
 
-.theory {
-    font-size: 1.1rem;
+.intro-text {
+    font-size: 1.2rem;
     color: #444;
     line-height: 1.9;
     text-align: justify;
@@ -280,7 +272,7 @@ body {
     image-rendering: auto;
 }
 
-/* --- ЦИФРОВАЯ СЕРИЯ (вертикальные) — фикс шума --- */
+/* --- ЦИФРОВАЯ СЕРИЯ (вертикальные) --- */
 .digital-block {
     margin-bottom: 60px;
 }
@@ -316,7 +308,7 @@ body {
     -ms-interpolation-mode: bicubic;
 }
 
-/* --- АРТ-СТЕЙТМЕНТ --- */
+/* --- ДЕТАЛЬНЫЙ ARTIST STATEMENT (под фото) --- */
 .statement {
     max-width: 900px;
     margin: 60px auto 0;
@@ -428,6 +420,9 @@ footer {
     .project-intro h2 {
         font-size: 2.5rem;
     }
+    .intro-text {
+        font-size: 1.05rem;
+    }
     .triptych {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -451,7 +446,7 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    .theory,
+    .intro-text,
     .statement p,
     .about-wrapper {
         text-align: left;

@@ -1,4 +1,4 @@
-/* ----- ОБЩИЕ НАСТРОЙКИ ----- */
+/* ----- ОБЩІ НАСТРОЙКИ ----- */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     line-height: 1.6;
 }
 
-/* ----- НАВИГАЦИЯ ----- */
+/* ----- НАВІГАЦІЯ ----- */
 .navbar {
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(8px);
@@ -44,6 +44,7 @@ body {
     list-style: none;
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 .nav-menu a {
@@ -59,6 +60,24 @@ body {
 .nav-menu a:hover {
     color: #000;
     border-bottom-color: #000;
+}
+
+.lang-btn {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+.lang-btn:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
 }
 
 /* ----- ГЕРОЙ ----- */
@@ -133,7 +152,7 @@ body {
     transform: scale(1.03);
 }
 
-/* ----- СЕКЦИИ (общие) ----- */
+/* ----- СЕКЦІЇ (загальні) ----- */
 .section {
     max-width: 1600px;
     margin: 0 auto;
@@ -161,7 +180,7 @@ body {
 }
 
 /* ====================================================== */
-/* ====== ПРОЕКТ "ЧЁРНЫЙ ЛЕБЕДЬ" ====== */
+/* ====== ПРОЄКТ "ЧОРНИЙ ЛЕБІДЬ" ====== */
 /* ====================================================== */
 
 .project-section {
@@ -169,7 +188,7 @@ body {
     max-width: 100%;
 }
 
-/* --- ВСТУПЛЕНИЕ (над фото) --- */
+/* --- ВСТУП (над фото) --- */
 .project-intro {
     max-width: 900px;
     margin: 0 auto 60px;
@@ -194,7 +213,7 @@ body {
     hyphens: auto;
 }
 
-/* --- Заголовки секций фото --- */
+/* --- Заголовки секцій фото --- */
 .film-block h3,
 .film-extra h3,
 .digital-block h3 {
@@ -214,7 +233,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* --- ТРИПТИХ (квадратный) --- */
+/* --- ТРИПТИХ (квадратний) --- */
 .film-block {
     margin-bottom: 60px;
 }
@@ -240,10 +259,9 @@ body {
     object-fit: contain;
     object-position: center;
     display: block;
-    image-rendering: auto;
 }
 
-/* --- ДОПОЛНИТЕЛЬНЫЕ ПЛЁНОЧНЫЕ (вертикальные) --- */
+/* --- ДОДАТКОВІ ПЛІВКОВІ (вертикальні) --- */
 .film-extra {
     margin-bottom: 60px;
 }
@@ -269,10 +287,9 @@ body {
     object-fit: contain;
     object-position: center;
     display: block;
-    image-rendering: auto;
 }
 
-/* --- ЦИФРОВАЯ СЕРИЯ (вертикальные) --- */
+/* --- ЦИФРОВА СЕРІЯ (вертикальні) — без хаків --- */
 .digital-block {
     margin-bottom: 60px;
 }
@@ -301,14 +318,10 @@ body {
     object-fit: cover;
     object-position: center;
     display: block;
-    /* Фикс для устранения шума при масштабировании */
-    image-rendering: auto;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: bicubic;
+    /* більше жодних хаків — фото вже правильного розміру */
 }
 
-/* --- ДЕТАЛЬНЫЙ ARTIST STATEMENT (под фото) --- */
+/* --- ДЕТАЛЬНИЙ ARTIST STATEMENT (під фото) --- */
 .statement {
     max-width: 900px;
     margin: 60px auto 0;
@@ -370,7 +383,7 @@ body {
 }
 
 /* ====================================================== */
-/* ====== ЗАГЛУШКИ ДЛЯ БУДУЩИХ РАЗДЕЛОВ ====== */
+/* ====== ЗАГЛУШКИ ДЛЯ МАЙБУТНІХ РОЗДІЛІВ ====== */
 /* ====================================================== */
 
 .placeholder-grid {
@@ -387,7 +400,7 @@ body {
 }
 
 /* ====================================================== */
-/* ====== ПОДВАЛ ====== */
+/* ====== ПІДВАЛ ====== */
 /* ====================================================== */
 
 footer {
@@ -400,7 +413,7 @@ footer {
 }
 
 /* ====================================================== */
-/* ====== АДАПТАЦИЯ ====== */
+/* ====== АДАПТАЦІЯ ====== */
 /* ====================================================== */
 
 @media (max-width: 768px) {
@@ -453,7 +466,7 @@ footer {
     }
 }
 
-/* Для очень широких экранов */
+/* Для дуже широких екранів */
 @media (min-width: 1400px) {
     .triptych {
         max-width: 1400px;

@@ -20,6 +20,7 @@
             <ul class="nav-menu">
                 <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="uk" style="display:none;">Головна</a></li>
                 <li><a href="black-swan.html" data-lang="en">The Black Swan</a><a href="black-swan.html" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
+                <li><a href="monumental.html" data-lang="en">Monumental</a><a href="monumental.html" data-lang="uk" style="display:none;">Монументальне</a></li>
                 <li><a href="photography.html" data-lang="en">Photography</a><a href="photography.html" data-lang="uk" style="display:none;">Фотографія</a></li>
                 <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="uk" style="display:none;">Про мене</a></li>
                 <li><button id="lang-switch" class="lang-btn">UA</button></li>
@@ -28,7 +29,6 @@
     </nav>
 
     <section class="project-section">
-
         <div class="project-intro">
             <h2 data-lang="en">The Black Swan</h2>
             <h2 data-lang="uk" style="display:none;">Чорний лебідь</h2>
@@ -51,15 +51,15 @@
             <h3 data-lang="uk" style="display:none;">Плівковий триптих</h3>
             <div class="triptych">
                 <div class="triptych-item">
-                    <img src="images/BS_film1.jpg" alt="Frame 1">
+                    <img src="images/BS_film1.jpg" alt="Frame 1" class="clickable">
                     <div class="photo-meta">#OpenHorizon #2024 #Film</div>
                 </div>
                 <div class="triptych-item">
-                    <img src="images/BS_film2.jpg" alt="Frame 2">
+                    <img src="images/BS_film2.jpg" alt="Frame 2" class="clickable">
                     <div class="photo-meta">#OpenHorizon #2024 #Film</div>
                 </div>
                 <div class="triptych-item">
-                    <img src="images/BS_film3.jpg" alt="Frame 3">
+                    <img src="images/BS_film3.jpg" alt="Frame 3" class="clickable">
                     <div class="photo-meta">#OpenHorizon #2024 #Film</div>
                 </div>
             </div>
@@ -70,11 +70,11 @@
             <h3 data-lang="uk" style="display:none;">Плівка · Додаткові кадри</h3>
             <div class="film-extra-grid">
                 <div class="film-extra-item">
-                    <img src="images/BS_film4.jpg" alt="Frame 4">
+                    <img src="images/BS_film4.jpg" alt="Frame 4" class="clickable">
                     <div class="photo-meta">#OpenHorizon #2024 #Film</div>
                 </div>
                 <div class="film-extra-item">
-                    <img src="images/BS_film5.jpg" alt="Frame 5">
+                    <img src="images/BS_film5.jpg" alt="Frame 5" class="clickable">
                     <div class="photo-meta">#OpenHorizon #2024 #Film</div>
                 </div>
             </div>
@@ -85,23 +85,23 @@
             <h3 data-lang="uk" style="display:none;">Цифрова серія</h3>
             <div class="digital-flex-container">
                 <div class="digital-item">
-                    <img src="images/BS_digital1.jpg" alt="UL corridor">
+                    <img src="images/BS_digital1.jpg" alt="UL corridor" class="clickable">
                     <div class="photo-meta">#Limerick #2024 #Digital</div>
                 </div>
                 <div class="digital-item">
-                    <img src="images/BS_digital2.jpg" alt="UL courtyard">
+                    <img src="images/BS_digital2.jpg" alt="UL courtyard" class="clickable">
                     <div class="photo-meta">#Limerick #2024 #Digital</div>
                 </div>
                 <div class="digital-item">
-                    <img src="images/BS_digital3.jpg" alt="UL staircase">
+                    <img src="images/BS_digital3.jpg" alt="UL staircase" class="clickable">
                     <div class="photo-meta">#Limerick #2024 #Digital</div>
                 </div>
                 <div class="digital-item">
-                    <img src="images/BS_digital4.jpg" alt="UL ramp">
+                    <img src="images/BS_digital4.jpg" alt="UL ramp" class="clickable">
                     <div class="photo-meta">#Limerick #2024 #Digital</div>
                 </div>
                 <div class="digital-item">
-                    <img src="images/BS_digital5.jpg" alt="UL portrait">
+                    <img src="images/BS_digital5.jpg" alt="UL portrait" class="clickable">
                     <div class="photo-meta">#Limerick #2024 #Digital</div>
                 </div>
             </div>
@@ -148,7 +148,6 @@
 
         <p class="credit" data-lang="en">Model: Elvira Trembach</p>
         <p class="credit" data-lang="uk" style="display:none;">Модель: Ельвіра Трембач</p>
-
     </section>
 
     <footer>
@@ -156,11 +155,17 @@
         <p data-lang="uk" style="display:none;">© 2026 anastasiia.vysh.art · Сайт на GitHub Pages</p>
     </footer>
 
+    <!-- Модальне вікно -->
+    <div id="modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
     <script>
+        // Перемикач мов
         document.addEventListener('DOMContentLoaded', function() {
             const langBtn = document.getElementById('lang-switch');
             let currentLang = 'en';
-
             langBtn.addEventListener('click', function() {
                 if (currentLang === 'en') {
                     currentLang = 'uk';
@@ -169,7 +174,6 @@
                     currentLang = 'en';
                     langBtn.textContent = 'UA';
                 }
-
                 document.querySelectorAll('[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === currentLang) {
                         el.style.display = '';
@@ -177,7 +181,6 @@
                         el.style.display = 'none';
                     }
                 });
-
                 document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === currentLang) {
                         el.style.display = '';
@@ -185,6 +188,37 @@
                         el.style.display = 'none';
                     }
                 });
+            });
+        });
+
+        // Модальне вікно для збільшення фото
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            const closeBtn = document.querySelector('.modal-close');
+
+            document.querySelectorAll('.clickable').forEach(img => {
+                img.addEventListener('click', function(e) {
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Закриття по Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                }
             });
         });
     </script>

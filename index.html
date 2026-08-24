@@ -14,7 +14,6 @@
 </head>
 <body>
 
-    <!-- ====== НАВІГАЦІЯ ====== -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">anastasiia.vysh.art</a>
@@ -29,7 +28,6 @@
         </div>
     </nav>
 
-    <!-- ====== ГЕРОЙ З ТРИПТИХОМ ====== -->
     <header class="hero-triptych">
         <img src="images/BS_film1.jpg" alt="The Black Swan, frame 1">
         <img src="images/BS_film2.jpg" alt="The Black Swan, frame 2">
@@ -52,7 +50,6 @@
         </div>
     </header>
 
-    <!-- ====== ВИТРИНА ПРОЄКТІВ ====== -->
     <section class="projects-grid">
         <div class="project-card">
             <a href="monumental.html">
@@ -64,7 +61,6 @@
                 <p data-lang="uk" style="display:none;">Плівкова фотографія · 2025</p>
             </a>
         </div>
-
         <div class="project-card coming-soon">
             <div class="project-thumb placeholder">
                 <span>Coming Soon</span>
@@ -76,7 +72,6 @@
         </div>
     </section>
 
-    <!-- ====== ABOUT ====== -->
     <section class="section alt-bg">
         <h2 data-lang="en">About</h2>
         <h2 data-lang="uk" style="display:none;">Про мене</h2>
@@ -87,7 +82,8 @@
                 arrived in Ireland in 2022. My work examines migration, war, propaganda, 
                 and identity through photography, video, installation, and projection mapping.
                 <br><br>
-                <a href="about.html">Read more →</a>
+                <strong>Socials:</strong> 
+                <a href="https://instagram.com/anastasiia.vysh.art" target="_blank">Instagram</a>
             </p>
             <p data-lang="uk" style="display:none;">
                 Я мультидисциплінарна художниця з Ірландії, наразі на 4 курсі 
@@ -96,12 +92,12 @@
                 міграцію, війну, пропаганду та ідентичність через фотографію, 
                 відео, інсталяції та проєкційний мапінг.
                 <br><br>
-                <a href="about.html">Читати далі →</a>
+                <strong>Соцмережі:</strong> 
+                <a href="https://instagram.com/anastasiia.vysh.art" target="_blank">Instagram</a>
             </p>
         </div>
     </section>
 
-    <!-- ====== ПІДВАЛ ====== -->
     <footer>
         <p data-lang="en">© 2026 anastasiia.vysh.art · Site on GitHub Pages</p>
         <p data-lang="uk" style="display:none;">© 2026 anastasiia.vysh.art · Сайт на GitHub Pages</p>
@@ -110,32 +106,33 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const langBtn = document.getElementById('lang-switch');
-            let currentLang = 'en';
+            let currentLang = localStorage.getItem('lang') || 'en';
+
+            function applyLanguage(lang) {
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+                document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+                langBtn.textContent = lang === 'en' ? 'UA' : 'EN';
+            }
+
+            applyLanguage(currentLang);
 
             langBtn.addEventListener('click', function() {
-                if (currentLang === 'en') {
-                    currentLang = 'uk';
-                    langBtn.textContent = 'EN';
-                } else {
-                    currentLang = 'en';
-                    langBtn.textContent = 'UA';
-                }
-
-                document.querySelectorAll('[data-lang]').forEach(el => {
-                    if (el.getAttribute('data-lang') === currentLang) {
-                        el.style.display = '';
-                    } else {
-                        el.style.display = 'none';
-                    }
-                });
-
-                document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
-                    if (el.getAttribute('data-lang') === currentLang) {
-                        el.style.display = '';
-                    } else {
-                        el.style.display = 'none';
-                    }
-                });
+                const nextLang = currentLang === 'en' ? 'uk' : 'en';
+                currentLang = nextLang;
+                localStorage.setItem('lang', nextLang);
+                applyLanguage(nextLang);
             });
         });
     </script>

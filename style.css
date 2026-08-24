@@ -1,507 +1,110 @@
-/* ----- ОБЩІ НАСТРОЙКИ ----- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-    background-color: #f8f8f6;
-    color: #1a1a1a;
-    line-height: 1.6;
-}
-
-/* ----- НАВІГАЦІЯ ----- */
-.navbar {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
-    padding: 14px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.nav-container {
-    max-width: 1600px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-decoration: none;
-    color: #111;
-}
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #444;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: color 0.2s;
-    padding-bottom: 4px;
-    border-bottom: 2px solid transparent;
-}
-
-.nav-menu a:hover {
-    color: #000;
-    border-bottom-color: #000;
-}
-
-.lang-btn {
-    background: none;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 4px 14px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: 0.2s;
-    color: #444;
-    letter-spacing: 1px;
-}
-
-.lang-btn:hover {
-    background: #111;
-    color: #fff;
-    border-color: #111;
-}
-
-/* ----- ГЕРОЙ ----- */
-.hero {
-    background: #ffffff;
-    padding: 140px 20px 120px;
-    text-align: center;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.hero h1 {
-    font-size: 5rem;
-    font-weight: 300;
-    letter-spacing: 10px;
-    margin-bottom: 15px;
-}
-
-.hero .subtitle {
-    font-size: 1.3rem;
-    color: #666;
-    letter-spacing: 4px;
-    font-weight: 300;
-}
-
-.hero-line {
-    width: 60px;
-    height: 2px;
-    background: #111;
-    margin: 30px auto;
-}
-
-.hero-desc {
-    font-size: 1.1rem;
-    color: #888;
-    letter-spacing: 2px;
-}
-
-.hero-themes {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #666;
-    letter-spacing: 2px;
-}
-
-.hero-themes span {
-    background: #f0f0f0;
-    padding: 4px 16px;
-    border-radius: 30px;
-    margin: 0 4px;
-    display: inline-block;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 40px;
-    background: #111;
-    color: #fff;
-    padding: 16px 60px;
-    text-decoration: none;
-    letter-spacing: 3px;
-    border-radius: 40px;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-    background: #333;
-    transform: scale(1.03);
-}
-
-/* ----- СЕКЦІЇ (загальні) ----- */
-.section {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 80px 30px;
-}
-
-.alt-bg {
-    background: #f4f4f2;
-    border-radius: 0;
-    margin: 0;
-    padding: 80px 30px;
-}
-
-.section h2 {
-    font-size: 3rem;
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
 /* ====================================================== */
-/* ====== ПРОЄКТ "ЧОРНИЙ ЛЕБІДЬ" ====== */
+/* ====== ВИТРИНА ПРОЄКТІВ (головна сторінка) ====== */
 /* ====================================================== */
 
-.project-section {
-    padding: 0;
-    max-width: 100%;
-}
-
-.project-intro {
-    max-width: 900px;
-    margin: 0 auto 60px;
-    padding: 0 30px;
-    padding-top: 70px;
-    text-align: center;
-}
-
-.project-intro h2 {
-    font-size: 3.5rem;
-    font-weight: 300;
-    letter-spacing: 6px;
-    margin-bottom: 20px;
-}
-
-.intro-text {
-    font-size: 1.2rem;
-    color: #444;
-    line-height: 1.9;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-}
-
-.film-block h3,
-.film-extra h3,
-.digital-block h3 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 0 20px;
-}
-
-/* --- ТРИПТИХ --- */
-.film-block {
-    margin-bottom: 60px;
-}
-
-.triptych {
+.projects-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 60px 30px 80px;
 }
 
-.triptych-item {
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #f8f8f6;
+.project-card {
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.triptych-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
+.project-card:hover {
+    transform: translateY(-6px);
 }
 
-/* --- ДОДАТКОВІ ПЛІВКОВІ --- */
-.film-extra {
-    margin-bottom: 60px;
+.project-card a {
+    text-decoration: none;
+    color: inherit;
 }
 
-.film-extra-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.film-extra-item {
+.project-thumb {
     aspect-ratio: 2 / 3;
     overflow: hidden;
-    background: #f8f8f6;
+    background: #f0f0f0;
+    margin-bottom: 16px;
 }
 
-.film-extra-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-}
-
-/* --- ЦИФРОВА СЕРІЯ --- */
-.digital-block {
-    margin-bottom: 60px;
-}
-
-.digital-flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.digital-item {
-    flex: 0 0 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    background: #f8f8f6;
-}
-
-.digital-item img {
+.project-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
     display: block;
+    transition: opacity 0.3s ease;
 }
 
-/* --- ARTIST STATEMENT --- */
-.statement {
-    max-width: 900px;
-    margin: 60px auto 0;
-    padding: 50px 40px;
-    background: #fafafa;
-    border-left: 4px solid #111;
+.project-card:hover .project-thumb img {
+    opacity: 0.92;
 }
 
-.statement h4 {
-    font-size: 1rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #888;
-    margin-bottom: 15px;
+.project-card h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
 }
 
-.statement p {
-    font-size: 1.05rem;
-    line-height: 2;
-    color: #333;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-}
-
-/* ====== КРЕДИТ ====== */
-.credit {
-    text-align: center;
+.project-card p {
     font-size: 0.9rem;
     color: #888;
     letter-spacing: 1px;
-    margin-top: 40px;
-    padding: 0 20px;
 }
 
-/* ====================================================== */
-/* ====== СЕРІЯ MONUMENTAL ====== */
-/* ====================================================== */
-
-.film-photography {
-    margin-bottom: 60px;
+/* Заглушка для майбутнього проєкту */
+.project-card.coming-soon {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
 }
 
-.film-photography h3 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-align: center;
-    margin-bottom: 5px;
-    padding: 0 20px;
+.project-card.coming-soon .project-thumb.placeholder {
+    background: #e8e8e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    letter-spacing: 2px;
 }
 
-.film-photography .medium-desc {
-    text-align: center;
-    color: #888;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+.project-card.coming-soon .project-thumb.placeholder span {
+    background: rgba(255,255,255,0.8);
+    padding: 8px 20px;
+    border-radius: 30px;
 }
 
-.film-photography-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.film-photo-item {
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    background: #f8f8f6;
-}
-
-.film-photo-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-}
-
-/* ====================================================== */
-/* ====== ABOUT ====== */
-/* ====================================================== */
-
-.about-wrapper {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-    font-size: 1.1rem;
-    line-height: 2;
-    color: #444;
-}
-
-.about-wrapper a {
-    color: #111;
-    text-decoration: none;
-    border-bottom: 1px solid #ccc;
-}
-
-.about-wrapper a:hover {
-    border-bottom-color: #000;
-}
-
-/* ====================================================== */
-/* ====== ПІДВАЛ ====== */
-/* ====================================================== */
-
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #bbb;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    border-top: 1px solid #eee;
-}
-
-/* ====================================================== */
-/* ====== АДАПТАЦІЯ ====== */
-/* ====================================================== */
-
+/* Адаптація для мобільних */
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .nav-menu {
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hero h1 {
-        font-size: 3.2rem;
-        letter-spacing: 6px;
-    }
-    .project-intro h2 {
-        font-size: 2.5rem;
-    }
-    .intro-text {
-        font-size: 1.05rem;
-    }
-    .triptych {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        padding: 0 10px;
-    }
-    .film-extra-grid {
-        grid-template-columns: 1fr;
-        padding: 0 10px;
-    }
-    .digital-item {
-        flex: 0 0 calc(50% - 10px);
-        max-width: calc(50% - 10px);
-    }
-    .statement {
-        padding: 30px 20px;
-    }
-    .section h2 {
-        font-size: 2.2rem;
-    }
-    .intro-text,
-    .statement p,
-    .about-wrapper {
-        text-align: left;
-    }
-    .film-photography-grid {
+    .projects-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        padding: 0 10px;
+        gap: 24px;
+        padding: 40px 16px 60px;
+    }
+    .project-card h3 {
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .film-photography-grid {
+    .projects-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        gap: 16px;
+        padding: 30px 12px 50px;
     }
-}
-
-@media (min-width: 1400px) {
-    .triptych {
-        max-width: 1400px;
+    .project-thumb {
+        aspect-ratio: 1 / 1;
     }
-    .film-extra-grid {
-        max-width: 1000px;
+    .project-card h3 {
+        font-size: 1rem;
     }
-    .digital-flex-container {
-        max-width: 1200px;
-    }
-    .film-photography-grid {
-        max-width: 1400px;
+    .project-card p {
+        font-size: 0.75rem;
     }
 }

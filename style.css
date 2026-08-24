@@ -80,7 +80,7 @@ body {
     border-color: #111;
 }
 
-/* ----- ГЕРОЙ (ГОЛОВНА) ----- */
+/* ----- ГЕРОЙ ----- */
 .hero {
     background: #ffffff;
     padding: 140px 20px 120px;
@@ -135,24 +135,7 @@ body {
     display: inline-block;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 40px;
-    background: #111;
-    color: #fff;
-    padding: 16px 60px;
-    text-decoration: none;
-    letter-spacing: 3px;
-    border-radius: 40px;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-    background: #333;
-    transform: scale(1.03);
-}
-
-/* ----- ЗАГАЛЬНІ СЕКЦІЇ ----- */
+/* ----- СЕКЦІЇ (загальні) ----- */
 .section {
     max-width: 1600px;
     margin: 0 auto;
@@ -171,84 +154,6 @@ body {
     font-weight: 300;
     text-align: center;
     margin-bottom: 10px;
-}
-
-/* ----- ВИТРИНА ПРОЄКТІВ (ГОЛОВНА) ----- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 60px 30px 80px;
-}
-
-.project-card {
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-}
-
-.project-card a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.project-thumb {
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    background: #f0f0f0;
-    margin-bottom: 16px;
-}
-
-.project-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.3s ease;
-}
-
-.project-card:hover .project-thumb img {
-    opacity: 0.92;
-}
-
-.project-card h3 {
-    font-size: 1.4rem;
-    font-weight: 400;
-    letter-spacing: 2px;
-    margin-bottom: 4px;
-}
-
-.project-card p {
-    font-size: 0.9rem;
-    color: #888;
-    letter-spacing: 1px;
-}
-
-.project-card.coming-soon {
-    opacity: 0.5;
-    pointer-events: none;
-    cursor: default;
-}
-
-.project-card.coming-soon .project-thumb.placeholder {
-    background: #e8e8e6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    color: #aaa;
-    letter-spacing: 2px;
-}
-
-.project-card.coming-soon .project-thumb.placeholder span {
-    background: rgba(255,255,255,0.8);
-    padding: 8px 20px;
-    border-radius: 30px;
 }
 
 /* ====================================================== */
@@ -419,32 +324,35 @@ body {
 }
 
 /* ====================================================== */
-/* ====== ФОТОГРАФІЯ — СЕРІЯ MONUMENTAL ====== */
+/* ====== СТОРІНКА MONUMENTAL ====== */
 /* ====================================================== */
 
-.film-photography {
-    margin-bottom: 60px;
-}
-
-.film-photography h4 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 2px;
-    text-align: center;
-    margin-bottom: 5px;
+.monumental-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
-.film-photography .medium-desc {
-    text-align: center;
-    color: #888;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+.monumental-item {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #f8f8f6;
 }
+
+.monumental-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* ====================================================== */
+/* ====== ЗАГАЛЬНА ГАЛЕРЕЯ (PHOTOGRAPHY) ====== */
+/* ====================================================== */
 
 .film-photography-grid {
     display: grid;
@@ -469,56 +377,96 @@ body {
     display: block;
 }
 
-/* ====================================================== */
-/* ====== СТОРІНКА ФОТОГРАФІЇ — РОЗДІЛИ ====== */
-/* ====================================================== */
-
-.photo-section {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid #eaeaea;
-}
-
-.photo-section:first-of-type {
-    border-top: none;
-    margin-top: 0;
-}
-
-.section-subtitle {
-    font-size: 2rem;
+/* ====== ТЕГИ ДЛЯ ФОТО (ХЕШТЕГИ) ====== */
+.photo-meta {
+    font-size: 0.75rem;
+    color: #999;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-top: 6px;
+    padding: 0 4px;
     font-weight: 300;
-    letter-spacing: 4px;
-    margin-bottom: 30px;
-    text-align: center;
 }
 
-.digital-placeholder {
-    text-align: center;
-    padding: 20px 0;
+/* ====================================================== */
+/* ====== ВИТРИНА ПРОЄКТІВ (ГОЛОВНА) ====== */
+/* ====================================================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 30px 80px;
 }
 
-.coming-soon-text {
-    font-size: 1.1rem;
+.project-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+.project-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-thumb {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #f0f0f0;
+    margin-bottom: 16px;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-thumb img {
+    opacity: 0.92;
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+}
+
+.project-card p {
+    font-size: 0.9rem;
     color: #888;
     letter-spacing: 1px;
-    margin-bottom: 30px;
 }
 
-/* ====================================================== */
-/* ====== ЗАГЛУШКИ ====== */
-/* ====================================================== */
-
-.placeholder-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+.project-card.coming-soon {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
 }
 
-.placeholder-item {
+.project-card.coming-soon .project-thumb.placeholder {
     background: #e8e8e6;
-    border-radius: 12px;
-    aspect-ratio: 1 / 1;
-    border: 1px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    letter-spacing: 2px;
+}
+
+.project-card.coming-soon .project-thumb.placeholder span {
+    background: rgba(255,255,255,0.8);
+    padding: 8px 20px;
+    border-radius: 30px;
 }
 
 /* ====================================================== */
@@ -602,16 +550,6 @@ footer {
     .section h2 {
         font-size: 2.2rem;
     }
-    .intro-text,
-    .statement p,
-    .about-wrapper {
-        text-align: left;
-    }
-    .film-photography-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        padding: 0 10px;
-    }
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
@@ -620,16 +558,24 @@ footer {
     .project-card h3 {
         font-size: 1.1rem;
     }
-    .section-subtitle {
-        font-size: 1.6rem;
+    .film-photography-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 10px;
+    }
+    .monumental-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        padding: 0 10px;
+    }
+    .intro-text,
+    .statement p,
+    .about-wrapper {
+        text-align: left;
     }
 }
 
 @media (max-width: 480px) {
-    .film-photography-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
     .projects-grid {
         grid-template-columns: 1fr 1fr;
         gap: 16px;
@@ -644,6 +590,14 @@ footer {
     .project-card p {
         font-size: 0.75rem;
     }
+    .film-photography-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .monumental-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -657,6 +611,9 @@ footer {
         max-width: 1200px;
     }
     .film-photography-grid {
+        max-width: 1400px;
+    }
+    .monumental-grid {
         max-width: 1400px;
     }
 }

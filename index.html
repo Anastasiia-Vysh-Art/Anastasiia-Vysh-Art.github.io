@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>anastasiia.vysh.art</title>
-    <meta name="description" content="Multidisciplinary artist portfolio. Photography, video, installation, projection mapping. Migration, war, propaganda, identity.">
+    <meta name="description" content="Портфоліо мультидисциплінарної художниці. Фотографія, відео, інсталяції, проєкційний мапінг. Міграція, війна, пропаганда, ідентичність.">
     <meta property="og:title" content="anastasiia.vysh.art">
-    <meta property="og:description" content="Multidisciplinary artist · LSAD 4th Year · Ireland">
+    <meta property="og:description" content="Мультидисциплінарна художниця · LSAD 4 курс · Ірландія">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://Anastasiia-Vysh-Art.github.io">
     <meta property="og:image" content="https://Anastasiia-Vysh-Art.github.io/images/BS_film1.jpg">
     
-    <!-- Favicon с буквой 'a' -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='serif'>a</text></svg>">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico?v=2" sizes="any">
+    <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ====== НАВИГАЦИЯ ====== -->
+    <!-- ====== НАВІГАЦІЯ ====== -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">anastasiia.vysh.art</a>
             <ul class="nav-menu">
-                <li><a href="#project">The Black Swan</a></li>
-                <li><a href="#photo">Photography</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#project" data-lang="en">The Black Swan</a><a href="#project" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
+                <li><a href="#photo" data-lang="en">Photography</a><a href="#photo" data-lang="uk" style="display:none;">Фотографія</a></li>
+                <li><a href="#about" data-lang="en">About</a><a href="#about" data-lang="uk" style="display:none;">Про мене</a></li>
+                <li><button id="lang-switch" class="lang-btn">UA</button></li>
             </ul>
         </div>
     </nav>
@@ -34,38 +39,49 @@
     <header class="hero">
         <div class="hero-content">
             <h1>anastasiia.vysh.art</h1>
-            <p class="subtitle">Multidisciplinary Artist · LSAD 4th Year · Ireland</p>
+            <p class="subtitle" data-lang="en">Multidisciplinary Artist · LSAD 4th Year · Ireland</p>
+            <p class="subtitle" data-lang="uk" style="display:none;">Мультидисциплінарна художниця · LSAD 4 курс · Ірландія</p>
             <div class="hero-line"></div>
-            <p class="hero-desc">
-                Photography · Video · Installation · Projection Mapping
-            </p>
+            <p class="hero-desc" data-lang="en">Photography · Video · Installation · Projection Mapping</p>
+            <p class="hero-desc" data-lang="uk" style="display:none;">Фотографія · Відео · Інсталяції · Проєкційний мапінг</p>
             <p class="hero-themes">
-                <span>Migration</span> · <span>War</span> · <span>Propaganda</span> · <span>Identity</span>
+                <span data-lang="en">Migration</span><span data-lang="uk" style="display:none;">Міграція</span> · 
+                <span data-lang="en">War</span><span data-lang="uk" style="display:none;">Війна</span> · 
+                <span data-lang="en">Propaganda</span><span data-lang="uk" style="display:none;">Пропаганда</span> · 
+                <span data-lang="en">Identity</span><span data-lang="uk" style="display:none;">Ідентичність</span>
             </p>
-            <a href="#project" class="btn">View Project</a>
+            <a href="#project" class="btn" data-lang="en">View Project</a>
+            <a href="#project" class="btn" data-lang="uk" style="display:none;">Дивитись проєкт</a>
         </div>
     </header>
 
     <!-- ========================================================== -->
-    <!-- ====== ПРОЕКТ "ЧЕРНЫЙ ЛЕБЕДЬ" ====== -->
+    <!-- ====== ПРОЄКТ "ЧОРНИЙ ЛЕБІДЬ" ====== -->
     <!-- ========================================================== -->
     <section id="project" class="project-section">
 
-        <!-- === ВСТУПЛЕНИЕ (краткое, над фото) === -->
+        <!-- === ВСТУП (короткий, над фото) === -->
         <div class="project-intro">
-            <h2>The Black Swan</h2>
-            <p class="intro-text">
+            <h2 data-lang="en">The Black Swan</h2>
+            <h2 data-lang="uk" style="display:none;">Чорний лебідь</h2>
+            <p class="intro-text" data-lang="en">
                 This series follows a lone figure in a swan costume through two landscapes: 
                 an open horizon — instinct, nature, the beginning of the journey — and the 
                 cold modernist architecture of the University of Limerick, a symbol of 
                 progress where a migrant arrives but never fully belongs.
             </p>
+            <p class="intro-text" data-lang="uk" style="display:none;">
+                Ця серія прослідковує за одинокою постаттю в костюмі лебедя через два ландшафти: 
+                відкритий горизонт — інстинкт, природа, початок подорожі — та холодну 
+                модерністську архітектуру Університету Лімерика, символ прогресу, куди 
+                мігрант прибуває, але ніколи не стає своїм до кінця.
+            </p>
         </div>
 
-        <!-- === ПЛЁНОЧНЫЙ ТРИПТИХ === -->
+        <!-- === ПЛІВКОВИЙ ТРИПТИХ === -->
         <div class="film-block">
-            <h3>Film Triptych</h3>
-            <p class="medium-desc">Black & white film · Open Horizon</p>
+            <h3 data-lang="en">Film Triptych</h3>
+            <h3 data-lang="uk" style="display:none;">Плівковий триптих</h3>
             <div class="triptych">
                 <div class="triptych-item"><img src="images/BS_film1.jpg" alt="Frame 1"></div>
                 <div class="triptych-item"><img src="images/BS_film2.jpg" alt="Frame 2"></div>
@@ -73,20 +89,20 @@
             </div>
         </div>
 
-        <!-- === ДОПОЛНИТЕЛЬНЫЕ ПЛЁНОЧНЫЕ ФОТО === -->
+        <!-- === ДОДАТКОВІ ПЛІВКОВІ ФОТО === -->
         <div class="film-extra">
-            <h3>Film · Additional Frames</h3>
-            <p class="medium-desc">Black & white film · Vertical format</p>
+            <h3 data-lang="en">Film · Additional Frames</h3>
+            <h3 data-lang="uk" style="display:none;">Плівка · Додаткові кадри</h3>
             <div class="film-extra-grid">
                 <div class="film-extra-item"><img src="images/BS_film4.jpg" alt="Frame 4"></div>
                 <div class="film-extra-item"><img src="images/BS_film5.jpg" alt="Frame 5"></div>
             </div>
         </div>
 
-        <!-- === ЦИФРОВАЯ СЕРИЯ === -->
+        <!-- === ЦИФРОВА СЕРІЯ === -->
         <div class="digital-block">
-            <h3>Digital Series</h3>
-            <p class="medium-desc">University of Limerick · Architecture of Arrival</p>
+            <h3 data-lang="en">Digital Series</h3>
+            <h3 data-lang="uk" style="display:none;">Цифрова серія</h3>
             <div class="digital-flex-container">
                 <div class="digital-item"><img src="images/BS_digital1.jpg" alt="UL corridor"></div>
                 <div class="digital-item"><img src="images/BS_digital2.jpg" alt="UL courtyard"></div>
@@ -96,10 +112,11 @@
             </div>
         </div>
 
-        <!-- === ДЕТАЛЬНЫЙ ARTIST STATEMENT (под фото) === -->
+        <!-- === ДЕТАЛЬНИЙ ARTIST STATEMENT === -->
         <div class="statement">
-            <h4>Artist Statement</h4>
-            <p>
+            <h4 data-lang="en">Artist Statement</h4>
+            <h4 data-lang="uk" style="display:none;">Художнє висловлювання</h4>
+            <p data-lang="en">
                 Before black swans were found in Australia, all swans were believed to be white — until they weren't. 
                 Nassim Taleb's "black swan" theory describes unpredictable events that reshape everything after them. 
                 Migration is exactly such an event — sudden, disruptive, profoundly influential. <br><br>
@@ -116,23 +133,64 @@
                 her surroundings. She belongs to neither place. This work is a visual record of what it means to arrive 
                 somewhere that was never built with you in mind.
             </p>
+            <p data-lang="uk" style="display:none;">
+                До того, як в Австралії знайшли чорних лебедів, всі вважали, що лебеді бувають лише білими — поки це не перестало бути правдою. 
+                Теорія "чорного лебедя" Нассіма Талеба описує непередбачувані події, які змінюють все навколо. 
+                Міграція — саме така подія: раптова, руйнівна, надзвичайно впливова. <br><br>
+                Я ніколи не очікувала, що стану біженкою — так само, як ніхто не очікував побачити чорного лебедя. 
+                У 2022 році я втекла від війни в Україні та прибула до Ірландії. Міграція для мене — не абстракція, 
+                це моє життя. <br><br>
+                На чорно-білій плівці лебідь рухається крізь відкритий горизонт — тіло, що перевіряє той самий інстинкт, 
+                який жене птахів на тисячі кілометрів заради виживання. У цифровій частині вона входить у скляно-бетонну 
+                архітектуру Університету Лімерика — світ, побудований без неї. <br><br>
+                Я обрала чорно-білу плівку, щоб викликати асоціацію з архівом — документальною якістю пам'яті, збереженням 
+                досвіду, який не піддається легкому осмисленню. Цифрові кадри відображають холодну точність побудованого 
+                середовища — системи, не призначеної для тих, хто прибуває без попередження. <br><br>
+                Лебідь втілює крихкість і боротьбу, прекрасний і водночас абсолютно самотній на тлі холодної байдужості 
+                світу. Вона не належить до жодного з цих місць. Ця робота — візуальний запис того, що означає прибути 
+                туди, де тебе ніколи не чекали.
+            </p>
         </div>
 
         <!-- === КРЕДИТ === -->
-        <p class="credit">Model: Elvira Trembach</p>
+        <p class="credit" data-lang="en">Model: Elvira Trembach</p>
+        <p class="credit" data-lang="uk" style="display:none;">Модель: Ельвіра Трембач</p>
 
     </section>
 
     <!-- ========================================================== -->
-    <!-- ====== PHOTOGRAPHY (заглушка) ====== -->
+    <!-- ====== PHOTOGRAPHY ====== -->
     <!-- ========================================================== -->
     <section id="photo" class="section alt-bg">
-        <h2>Photography</h2>
-        <p class="section-desc">Documentary, film, and digital series — coming soon</p>
-        <div class="placeholder-grid">
-            <div class="placeholder-item"></div>
-            <div class="placeholder-item"></div>
-            <div class="placeholder-item"></div>
+        <h2 data-lang="en">Photography</h2>
+        <h2 data-lang="uk" style="display:none;">Фотографія</h2>
+        
+        <!-- Серія Monumental -->
+        <div class="film-photography">
+            <h3 data-lang="en">Monumental</h3>
+            <h3 data-lang="uk" style="display:none;">Монументальне</h3>
+            <p class="medium-desc" data-lang="en">
+                This series explores the tension between the monumental and the ephemeral in the urban landscape. 
+                Using film, the artist captures how light, texture, and detail transform grand architecture into 
+                intimate moments of quiet observation.
+            </p>
+            <p class="medium-desc" data-lang="uk" style="display:none;">
+                Ця серія досліджує напругу між монументальним і ефемерним у міському ландшафті. 
+                Використовуючи плівку, авторка фіксує, як світло, текстура та деталі перетворюють 
+                грандіозну архітектуру на інтимні моменти тихого спостереження.
+            </p>
+            <div class="film-photography-grid">
+                <div class="film-photo-item"><img src="images/mfilm_01.jpg" alt="Monumental series, frame 1"></div>
+                <div class="film-photo-item"><img src="images/mfilm_02.jpg" alt="Monumental series, frame 2"></div>
+                <div class="film-photo-item"><img src="images/mfilm_03.jpg" alt="Monumental series, frame 3"></div>
+                <div class="film-photo-item"><img src="images/mfilm_04.jpg" alt="Monumental series, frame 4"></div>
+                <div class="film-photo-item"><img src="images/mfilm_05.jpg" alt="Monumental series, frame 5"></div>
+                <div class="film-photo-item"><img src="images/mfilm_06.jpg" alt="Monumental series, frame 6"></div>
+                <div class="film-photo-item"><img src="images/mfilm_07.jpg" alt="Monumental series, frame 7"></div>
+                <div class="film-photo-item"><img src="images/mfilm_08.jpg" alt="Monumental series, frame 8"></div>
+                <div class="film-photo-item"><img src="images/mfilm_09.jpg" alt="Monumental series, frame 9"></div>
+                <div class="film-photo-item"><img src="images/mfilm_10.jpg" alt="Monumental series, frame 10"></div>
+            </div>
         </div>
     </section>
 
@@ -140,9 +198,10 @@
     <!-- ====== ABOUT ====== -->
     <!-- ========================================================== -->
     <section id="about" class="section alt-bg">
-        <h2>About</h2>
+        <h2 data-lang="en">About</h2>
+        <h2 data-lang="uk" style="display:none;">Про мене</h2>
         <div class="about-wrapper">
-            <p>
+            <p data-lang="en">
                 I'm a multidisciplinary artist based in Ireland, currently in my 4th year 
                 at LSAD (Limerick School of Art and Design). <br><br>
                 I am a Ukrainian refugee who arrived in Ireland after the full-scale 
@@ -159,15 +218,65 @@
                 <strong>Socials:</strong> 
                 <a href="https://instagram.com/anastasiia.vysh.art" target="_blank">Instagram</a>
             </p>
+            <p data-lang="uk" style="display:none;">
+                Я мультидисциплінарна художниця, яка живе в Ірландії, наразі навчаюся на 4 курсі 
+                в LSAD (Limerick School of Art and Design). <br><br>
+                Я українська біженка, яка прибула до Ірландії після початку повномасштабного 
+                вторгнення в Україну в 2022 році. Цей досвід переміщення, втрати та адаптації 
+                став центральним у моїй художній практиці. <br><br>
+                Мої роботи досліджують перетин <strong>міграції, війни, пропаганди та 
+                ідентичності</strong>. Я працюю з фотографією, відеоартом, інсталяціями 
+                та проєкційним мапінгом — часто досліджуючи, як політичні та соціальні наративи 
+                формують наше відчуття приналежності, особливо в часи кризи. <br><br>
+                Останні проєкти були присвячені візуальній мові конфлікту, ролі медіа у 
+                формуванні суспільної думки та особистому досвіду вимушеного переселення. 
+                Мене цікавлять простори між правдою та вигадкою, пам'яттю та історією, 
+                домом і вигнанням. <br><br>
+                <strong>Соцмережі:</strong> 
+                <a href="https://instagram.com/anastasiia.vysh.art" target="_blank">Instagram</a>
+            </p>
         </div>
     </section>
 
-    <!-- ========================================================== -->
-    <!-- ====== ПОДВАЛ ====== -->
-    <!-- ========================================================== -->
+    <!-- ====== ПІДВАЛ ====== -->
     <footer>
-        <p>© 2026 anastasiia.vysh.art · Site on GitHub Pages</p>
+        <p data-lang="en">© 2026 anastasiia.vysh.art · Site on GitHub Pages</p>
+        <p data-lang="uk" style="display:none;">© 2026 anastasiia.vysh.art · Сайт на GitHub Pages</p>
     </footer>
+
+    <!-- ====== ПЕРЕКЛЮЧАЧ МОВ ====== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langBtn = document.getElementById('lang-switch');
+            let currentLang = 'en';
+
+            langBtn.addEventListener('click', function() {
+                if (currentLang === 'en') {
+                    currentLang = 'uk';
+                    langBtn.textContent = 'EN';
+                } else {
+                    currentLang = 'en';
+                    langBtn.textContent = 'UA';
+                }
+
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === currentLang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+
+                document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === currentLang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

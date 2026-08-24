@@ -61,7 +61,6 @@
             <h3 data-lang="en">Series</h3>
             <h3 data-lang="uk" style="display:none;">Серія</h3>
             <div class="monumental-grid">
-                <!-- Два вертикальних фото (перша строчка) -->
                 <div class="monumental-item vertical">
                     <img src="images/mfilm_01.jpg" alt="Monumental, frame 1" class="clickable">
                     <div class="photo-meta">#Limerick #2025 #Film</div>
@@ -70,8 +69,6 @@
                     <img src="images/mfilm_02.jpg" alt="Monumental, frame 2" class="clickable">
                     <div class="photo-meta">#Limerick #2025 #Film</div>
                 </div>
-
-                <!-- Інші (горизонтальні) — 8 фото -->
                 <div class="monumental-item horizontal">
                     <img src="images/mfilm_03.jpg" alt="Monumental, frame 3" class="clickable">
                     <div class="photo-meta">#Limerick #2025 #Film</div>
@@ -151,32 +148,33 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const langBtn = document.getElementById('lang-switch');
-            let currentLang = 'en';
+            let currentLang = localStorage.getItem('lang') || 'en';
+
+            function applyLanguage(lang) {
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+                document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+                langBtn.textContent = lang === 'en' ? 'UA' : 'EN';
+            }
+
+            applyLanguage(currentLang);
 
             langBtn.addEventListener('click', function() {
-                if (currentLang === 'en') {
-                    currentLang = 'uk';
-                    langBtn.textContent = 'EN';
-                } else {
-                    currentLang = 'en';
-                    langBtn.textContent = 'UA';
-                }
-
-                document.querySelectorAll('[data-lang]').forEach(el => {
-                    if (el.getAttribute('data-lang') === currentLang) {
-                        el.style.display = '';
-                    } else {
-                        el.style.display = 'none';
-                    }
-                });
-
-                document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
-                    if (el.getAttribute('data-lang') === currentLang) {
-                        el.style.display = '';
-                    } else {
-                        el.style.display = 'none';
-                    }
-                });
+                const nextLang = currentLang === 'en' ? 'uk' : 'en';
+                currentLang = nextLang;
+                localStorage.setItem('lang', nextLang);
+                applyLanguage(nextLang);
             });
         });
 

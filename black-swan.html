@@ -157,7 +157,6 @@
         <p data-lang="uk" style="display:none;">© 2026 anastasiia.vysh.art · Сайт на GitHub Pages</p>
     </footer>
 
-    <!-- Модальне вікно -->
     <div id="modal" class="modal">
         <span class="modal-close">&times;</span>
         <img class="modal-content" id="modal-img">
@@ -166,32 +165,33 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const langBtn = document.getElementById('lang-switch');
-            let currentLang = 'en';
+            let currentLang = localStorage.getItem('lang') || 'en';
+
+            function applyLanguage(lang) {
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+                document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+                langBtn.textContent = lang === 'en' ? 'UA' : 'EN';
+            }
+
+            applyLanguage(currentLang);
 
             langBtn.addEventListener('click', function() {
-                if (currentLang === 'en') {
-                    currentLang = 'uk';
-                    langBtn.textContent = 'EN';
-                } else {
-                    currentLang = 'en';
-                    langBtn.textContent = 'UA';
-                }
-
-                document.querySelectorAll('[data-lang]').forEach(el => {
-                    if (el.getAttribute('data-lang') === currentLang) {
-                        el.style.display = '';
-                    } else {
-                        el.style.display = 'none';
-                    }
-                });
-
-                document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
-                    if (el.getAttribute('data-lang') === currentLang) {
-                        el.style.display = '';
-                    } else {
-                        el.style.display = 'none';
-                    }
-                });
+                const nextLang = currentLang === 'en' ? 'uk' : 'en';
+                currentLang = nextLang;
+                localStorage.setItem('lang', nextLang);
+                applyLanguage(nextLang);
             });
         });
 

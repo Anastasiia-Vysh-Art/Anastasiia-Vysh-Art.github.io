@@ -222,7 +222,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* --- ТРИПТИХ (квадратный, с рамками) --- */
+/* --- ТРИПТИХ (квадратный) — без рамок, только пространство --- */
 .film-block {
     margin-bottom: 60px;
 }
@@ -231,26 +231,23 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-    background: transparent;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .triptych-item {
-    background: #ffffff;
-    padding: 12px 12px 20px 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    border-radius: 4px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: none;
 }
 
 .triptych-item img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    background: #f0f0f0;
 }
 
 /* --- ДОПОЛНИТЕЛЬНЫЕ ПЛЁНОЧНЫЕ (вертикальные) --- */
@@ -261,54 +258,55 @@ body {
 .film-extra-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .film-extra-item {
-    background: #ffffff;
-    padding: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    border-radius: 4px;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: none;
 }
 
 .film-extra-item img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    background: #f0f0f0;
 }
 
-/* --- ЦИФРОВАЯ СЕРИЯ (вертикальные) --- */
+/* --- ЦИФРОВАЯ СЕРИЯ (вертикальные) — центрирование 3+2 --- */
 .digital-block {
     margin-bottom: 60px;
 }
 
-.digital-grid-vertical {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+.digital-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .digital-item {
-    background: #ffffff;
-    padding: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    border-radius: 4px;
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: none;
 }
 
 .digital-item img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    background: #f0f0f0;
 }
 
 /* --- АРТ-СТЕЙТМЕНТ --- */
@@ -335,6 +333,16 @@ body {
     text-align: justify;
     text-justify: inter-word;
     hyphens: auto;
+}
+
+/* ====== КРЕДИТ ====== */
+.credit {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 1px;
+    margin-top: 40px;
+    padding: 0 20px;
 }
 
 /* ====================================================== */
@@ -418,17 +426,13 @@ footer {
         gap: 16px;
         padding: 0 10px;
     }
-    .triptych-item {
-        padding: 10px 10px 16px 10px;
-    }
     .film-extra-grid {
         grid-template-columns: 1fr;
         padding: 0 10px;
     }
-    .digital-grid-vertical {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 0 10px;
+    .digital-item {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
     }
     .statement {
         padding: 30px 20px;
@@ -440,7 +444,6 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    /* На маленьких экранах текст лучше выравнивать по левому краю, чтобы избежать слишком больших пробелов */
     .theory,
     .statement p,
     .about-wrapper {
@@ -456,7 +459,7 @@ footer {
     .film-extra-grid {
         max-width: 1000px;
     }
-    .digital-grid-vertical {
+    .digital-flex-container {
         max-width: 1200px;
     }
 }

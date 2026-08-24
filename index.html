@@ -14,6 +14,7 @@
 </head>
 <body>
 
+    <!-- ====== НАВІГАЦІЯ ====== -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">anastasiia.vysh.art</a>
@@ -28,8 +29,12 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
+    <!-- ====== ГЕРОЙ З ТРИПТИХОМ ====== -->
+    <header class="hero-triptych">
+        <img src="images/BS_film1.jpg" alt="The Black Swan, frame 1">
+        <img src="images/BS_film2.jpg" alt="The Black Swan, frame 2">
+        <img src="images/BS_film3.jpg" alt="The Black Swan, frame 3">
+        <div class="hero-overlay">
             <h1>anastasiia.vysh.art</h1>
             <p class="subtitle" data-lang="en">Multidisciplinary Artist · Ireland</p>
             <p class="subtitle" data-lang="uk" style="display:none;">Мультидисциплінарна художниця · Ірландія</p>
@@ -47,20 +52,7 @@
         </div>
     </header>
 
-    <section class="featured-project">
-        <div class="featured-grid">
-            <a href="black-swan.html" class="featured-item">
-                <img src="images/BS_film1.jpg" alt="The Black Swan, frame 1">
-            </a>
-            <a href="black-swan.html" class="featured-item">
-                <img src="images/BS_film2.jpg" alt="The Black Swan, frame 2">
-            </a>
-            <a href="black-swan.html" class="featured-item">
-                <img src="images/BS_film3.jpg" alt="The Black Swan, frame 3">
-            </a>
-        </div>
-    </section>
-
+    <!-- ====== ВИТРИНА ПРОЄКТІВ ====== -->
     <section class="projects-grid">
         <div class="project-card">
             <a href="monumental.html">
@@ -72,6 +64,7 @@
                 <p data-lang="uk" style="display:none;">Плівкова фотографія · 2025</p>
             </a>
         </div>
+
         <div class="project-card coming-soon">
             <div class="project-thumb placeholder">
                 <span>Coming Soon</span>
@@ -83,6 +76,7 @@
         </div>
     </section>
 
+    <!-- ====== ABOUT ====== -->
     <section class="section alt-bg">
         <h2 data-lang="en">About</h2>
         <h2 data-lang="uk" style="display:none;">Про мене</h2>
@@ -107,6 +101,7 @@
         </div>
     </section>
 
+    <!-- ====== ПІДВАЛ ====== -->
     <footer>
         <p data-lang="en">© 2026 anastasiia.vysh.art · Site on GitHub Pages</p>
         <p data-lang="uk" style="display:none;">© 2026 anastasiia.vysh.art · Сайт на GitHub Pages</p>
@@ -125,6 +120,7 @@
                     currentLang = 'en';
                     langBtn.textContent = 'UA';
                 }
+
                 document.querySelectorAll('[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === currentLang) {
                         el.style.display = '';
@@ -132,6 +128,7 @@
                         el.style.display = 'none';
                     }
                 });
+
                 document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === currentLang) {
                         el.style.display = '';

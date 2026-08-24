@@ -34,7 +34,6 @@
 
         <div class="film-photography-grid">
 
-            <!-- Чорний лебідь — плівка -->
             <div class="film-photo-item">
                 <img src="images/BS_film1.jpg" alt="The Black Swan, frame 1" class="clickable">
                 <div class="photo-meta">#OpenHorizon #2024 #Film</div>
@@ -56,7 +55,6 @@
                 <div class="photo-meta">#OpenHorizon #2024 #Film</div>
             </div>
 
-            <!-- Чорний лебідь — цифра -->
             <div class="film-photo-item">
                 <img src="images/BS_digital1.jpg" alt="The Black Swan, digital 1" class="clickable">
                 <div class="photo-meta">#Limerick #2024 #Digital</div>
@@ -78,7 +76,6 @@
                 <div class="photo-meta">#Limerick #2024 #Digital</div>
             </div>
 
-            <!-- Monumental -->
             <div class="film-photo-item">
                 <img src="images/mfilm_01.jpg" alt="Monumental, frame 1" class="clickable">
                 <div class="photo-meta">#Limerick #2025 #Film</div>
@@ -136,32 +133,33 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const langBtn = document.getElementById('lang-switch');
-            let currentLang = 'en';
+            let currentLang = localStorage.getItem('lang') || 'en';
+
+            function applyLanguage(lang) {
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+                document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+                langBtn.textContent = lang === 'en' ? 'UA' : 'EN';
+            }
+
+            applyLanguage(currentLang);
 
             langBtn.addEventListener('click', function() {
-                if (currentLang === 'en') {
-                    currentLang = 'uk';
-                    langBtn.textContent = 'EN';
-                } else {
-                    currentLang = 'en';
-                    langBtn.textContent = 'UA';
-                }
-
-                document.querySelectorAll('[data-lang]').forEach(el => {
-                    if (el.getAttribute('data-lang') === currentLang) {
-                        el.style.display = '';
-                    } else {
-                        el.style.display = 'none';
-                    }
-                });
-
-                document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
-                    if (el.getAttribute('data-lang') === currentLang) {
-                        el.style.display = '';
-                    } else {
-                        el.style.display = 'none';
-                    }
-                });
+                const nextLang = currentLang === 'en' ? 'uk' : 'en';
+                currentLang = nextLang;
+                localStorage.setItem('lang', nextLang);
+                applyLanguage(nextLang);
             });
         });
 

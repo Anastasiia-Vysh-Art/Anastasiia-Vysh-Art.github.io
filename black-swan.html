@@ -29,6 +29,7 @@
     </nav>
 
     <section class="project-section">
+
         <div class="project-intro">
             <h2 data-lang="en">The Black Swan</h2>
             <h2 data-lang="uk" style="display:none;">Чорний лебідь</h2>
@@ -148,6 +149,7 @@
 
         <p class="credit" data-lang="en">Model: Elvira Trembach</p>
         <p class="credit" data-lang="uk" style="display:none;">Модель: Ельвіра Трембач</p>
+
     </section>
 
     <footer>
@@ -162,10 +164,10 @@
     </div>
 
     <script>
-        // Перемикач мов
         document.addEventListener('DOMContentLoaded', function() {
             const langBtn = document.getElementById('lang-switch');
             let currentLang = 'en';
+
             langBtn.addEventListener('click', function() {
                 if (currentLang === 'en') {
                     currentLang = 'uk';
@@ -174,6 +176,7 @@
                     currentLang = 'en';
                     langBtn.textContent = 'UA';
                 }
+
                 document.querySelectorAll('[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === currentLang) {
                         el.style.display = '';
@@ -181,6 +184,7 @@
                         el.style.display = 'none';
                     }
                 });
+
                 document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === currentLang) {
                         el.style.display = '';
@@ -191,35 +195,32 @@
             });
         });
 
-        // Модальне вікно для збільшення фото
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('modal');
-            const modalImg = document.getElementById('modal-img');
-            const closeBtn = document.querySelector('.modal-close');
+        // Модальне вікно
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeBtn = document.querySelector('.modal-close');
 
-            document.querySelectorAll('.clickable').forEach(img => {
-                img.addEventListener('click', function(e) {
-                    modal.style.display = 'flex';
-                    modalImg.src = this.src;
-                });
+        document.querySelectorAll('.clickable').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = 'flex';
+                modalImg.src = this.src;
             });
+        });
 
-            closeBtn.addEventListener('click', function() {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
                 modal.style.display = 'none';
-            });
+            }
+        });
 
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-
-            // Закриття по Escape
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.style.display === 'flex') {
-                    modal.style.display = 'none';
-                }
-            });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            }
         });
     </script>
 

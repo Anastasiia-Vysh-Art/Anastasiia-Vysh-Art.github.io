@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About · anastasiia.vysh.art</title>
+    <meta name="description" content="About Anastasiia Vyshnevska — multidisciplinary artist based in Ireland. Ukrainian refugee, LSAD 4th year.">
+    <link rel="icon" href="favicon.ico?v=2" sizes="any">
+    <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ====== НАВІГАЦІЯ ====== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">anastasiia.vysh.art</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="uk" style="display:none;">Головна</a></li>
+                <li><a href="black-swan.html" data-lang="en">The Black Swan</a><a href="black-swan.html" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
+                <li><a href="photography.html" data-lang="en">Photography</a><a href="photography.html" data-lang="uk" style="display:none;">Фотографія</a></li>
+                <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="uk" style="display:none;">Про мене</a></li>
+                <li><button id="lang-switch" class="lang-btn">UA</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ====== ABOUT ====== -->
+    <section class="section alt-bg">
+        <h2 data-lang="en">About</h2>
+        <h2 data-lang="uk" style="display:none;">Про мене</h2>
+        <div class="about-wrapper">
+            <p data-lang="en">
+                I'm a multidisciplinary artist based in Ireland, currently in my 4th year 
+                at LSAD (Limerick School of Art and Design). <br><br>
+                I am a Ukrainian refugee who arrived in Ireland after the full-scale 
+                invasion of Ukraine began in 2022. This experience of displacement, loss, 
+                and adaptation has become central to my artistic practice. <br><br>
+                My work examines the intersections of <strong>migration, war, propaganda, 
+                and identity</strong>. I work across photography, video art, installations, 
+                and projection mapping. <br><br>
+                <strong>Socials:</strong> 
+                <a href="https://instagram.com/anastasiia.vysh.art" target="_blank">Instagram</a>
+            </p>
+            <p data-lang="uk" style="display:none;">
+                Я мультидисциплінарна художниця, яка живе в Ірландії, наразі навчаюся на 4 курсі 
+                в LSAD (Limerick School of Art and Design). <br><br>
+                Я українська біженка, яка прибула до Ірландії після початку повномасштабного 
+                вторгнення в Україну в 2022 році. Цей досвід переміщення, втрати та адаптації 
+                став центральним у моїй художній практиці. <br><br>
+                Мої роботи досліджують перетин <strong>міграції, війни, пропаганди та 
+                ідентичності</strong>. Я працюю з фотографією, відеоартом, інсталяціями 
+                та проєкційним мапінгом. <br><br>
+                <strong>Соцмережі:</strong> 
+                <a href="https://instagram.com/anastasiia.vysh.art" target="_blank">Instagram</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- ====== ПІДВАЛ ====== -->
+    <footer>
+        <p data-lang="en">© 2026 anastasiia.vysh.art · Site on GitHub Pages</p>
+        <p data-lang="uk" style="display:none;">© 2026 anastasiia.vysh.art · Сайт на GitHub Pages</p>
+    </footer>
+
+    <!-- ====== ПЕРЕКЛЮЧАЧ МОВ ====== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langBtn = document.getElementById('lang-switch');
+            let currentLang = 'en';
+
+            langBtn.addEventListener('click', function() {
+                if (currentLang === 'en') {
+                    currentLang = 'uk';
+                    langBtn.textContent = 'EN';
+                } else {
+                    currentLang = 'en';
+                    langBtn.textContent = 'UA';
+                }
+
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === currentLang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+
+                document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === currentLang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>anastasiia.vysh.art</title>
     <meta name="description" content="Multidisciplinary artist portfolio. Photography, video, installation, projection mapping. Migration, war, propaganda, identity.">
-    <meta property="og:title" content="A.V. · Portfolio">
+    <meta property="og:title" content="anastasiia.vysh.art">
     <meta property="og:description" content="Multidisciplinary artist · LSAD 4th Year · Ireland">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://Anastasiia-Vysh-Art.github.io">
     <meta property="og:image" content="https://Anastasiia-Vysh-Art.github.io/images/BS_film1.jpg">
+    
+    <!-- Favicon с буквой 'a' -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='serif'>a</text></svg>">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +25,6 @@
             <ul class="nav-menu">
                 <li><a href="#project">The Black Swan</a></li>
                 <li><a href="#photo">Photography</a></li>
-                <li><a href="#drawings">Drawing</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
         </div>
@@ -87,7 +90,7 @@
         <div class="digital-block">
             <h3>Digital Series</h3>
             <p class="medium-desc">University of Limerick · Architecture of Arrival</p>
-            <div class="digital-grid-vertical">
+            <div class="digital-flex-container">
                 <div class="digital-item"><img src="images/BS_digital1.jpg" alt="UL corridor"></div>
                 <div class="digital-item"><img src="images/BS_digital2.jpg" alt="UL courtyard"></div>
                 <div class="digital-item"><img src="images/BS_digital3.jpg" alt="UL staircase"></div>
@@ -118,9 +121,15 @@
                 an option.
             </p>
         </div>
+
+        <!-- === КРЕДИТ === -->
+        <p class="credit">Model: Elvira Trembach</p>
+
     </section>
 
-    <!-- ====== ЗАГЛУШКИ ДЛЯ БУДУЩИХ РАЗДЕЛОВ ====== -->
+    <!-- ========================================================== -->
+    <!-- ====== PHOTOGRAPHY (заглушка) ====== -->
+    <!-- ========================================================== -->
     <section id="photo" class="section alt-bg">
         <h2>Photography</h2>
         <p class="section-desc">Documentary, film, and digital series — coming soon</p>
@@ -131,27 +140,22 @@
         </div>
     </section>
 
-    <section id="drawings" class="section">
-        <h2>Drawing & Graphics</h2>
-        <p class="section-desc">Academic drawing, sketches, illustrations — coming soon</p>
-        <div class="placeholder-grid">
-            <div class="placeholder-item"></div>
-            <div class="placeholder-item"></div>
-            <div class="placeholder-item"></div>
-        </div>
-    </section>
-
+    <!-- ========================================================== -->
     <!-- ====== ABOUT ====== -->
+    <!-- ========================================================== -->
     <section id="about" class="section alt-bg">
         <h2>About</h2>
         <div class="about-wrapper">
             <p>
                 I'm a multidisciplinary artist based in Ireland, currently in my 4th year 
                 at LSAD (Limerick School of Art and Design). <br><br>
-                My practice examines the intersections of <strong>migration, war, propaganda, 
+                I am a Ukrainian refugee who arrived in Ireland after the full-scale 
+                invasion of Ukraine began in 2022. This experience of displacement, loss, 
+                and adaptation has become central to my artistic practice. <br><br>
+                My work examines the intersections of <strong>migration, war, propaganda, 
                 and identity</strong>. I work across photography, video art, installations, 
                 and projection mapping — often exploring how political and social narratives 
-                shape our sense of belonging. <br><br>
+                shape our sense of belonging, especially in times of crisis. <br><br>
                 Recent projects have investigated the visual language of conflict, the 
                 role of media in shaping public perception, and the personal experience 
                 of displacement. I'm interested in the spaces between truth and fiction, 
@@ -162,8 +166,12 @@
         </div>
     </section>
 
+    <!-- ========================================================== -->
+    <!-- ====== ПОДВАЛ ====== -->
+    <!-- ========================================================== -->
     <footer>
         <p>© 2026 anastasiia.vysh.art · Site on GitHub Pages</p>
     </footer>
+
 </body>
 </html>

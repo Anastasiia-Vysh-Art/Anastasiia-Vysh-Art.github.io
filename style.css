@@ -61,7 +61,7 @@ body {
     border-bottom-color: #000;
 }
 
-/* ----- ГЕРОЙ (на всю ширину) ----- */
+/* ----- ГЕРОЙ ----- */
 .hero {
     background: #ffffff;
     padding: 140px 20px 120px;
@@ -133,7 +133,7 @@ body {
     transform: scale(1.03);
 }
 
-/* ----- СЕКЦИИ (широкие) ----- */
+/* ----- СЕКЦИИ ----- */
 .section {
     max-width: 1600px;
     margin: 0 auto;
@@ -161,7 +161,7 @@ body {
 }
 
 /* ====================================================== */
-/* ====== БЛОК ПРОЕКТА (на всю ширину) ====== */
+/* ====== ПРОЕКТ ====== */
 /* ====================================================== */
 
 .project-section {
@@ -199,12 +199,12 @@ body {
     line-height: 1.9;
 }
 
-/* --- Триптих (на всю ширину) --- */
+/* --- Триптих (квадратный, с рамками) --- */
 .film-block {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
-.film-block h3, .digital-block h3 {
+.film-block h3, .film-extra h3, .digital-block h3 {
     font-size: 1.8rem;
     font-weight: 400;
     letter-spacing: 3px;
@@ -224,44 +224,85 @@ body {
 .triptych {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 0;
-    background: #fff;
+    gap: 20px;
+    background: transparent;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.triptych-item {
+    background: #ffffff;
+    padding: 12px 12px 20px 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
 }
 
 .triptych-item img {
     width: 100%;
-    height: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
     display: block;
+    background: #f0f0f0;
 }
 
-/* --- Цифровая сетка (на всю ширину) --- */
-.digital-grid {
+/* --- Дополнительные плёночные (вертикальные, 2 колонки) --- */
+.film-extra {
+    margin-bottom: 60px;
+}
+
+.film-extra-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.film-extra-item {
+    background: #ffffff;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+}
+
+.film-extra-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    background: #f0f0f0;
+}
+
+/* --- Цифровая серия (вертикальные, 3 колонки) --- */
+.digital-block {
+    margin-bottom: 60px;
+}
+
+.digital-grid-vertical {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-    background: #fff;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.digital-item {
+    background: #ffffff;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
 }
 
 .digital-item img {
     width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     display: block;
-}
-
-/* --- Подписи --- */
-.caption {
-    text-align: center;
-    font-style: italic;
-    color: #666;
-    font-size: 1rem;
-    margin-top: 30px;
-    padding: 0 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    background: #f0f0f0;
 }
 
 /* --- Стейтмент --- */
@@ -331,7 +372,7 @@ footer {
     border-top: 1px solid #eee;
 }
 
-/* ====== АДАПТАЦИЯ ПОД ТЕЛЕФОН ====== */
+/* ====== АДАПТАЦИЯ ====== */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -351,13 +392,20 @@ footer {
     }
     .triptych {
         grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 10px;
     }
-    .triptych-item img {
-        aspect-ratio: 16 / 9;
+    .triptych-item {
+        padding: 10px 10px 16px 10px;
     }
-    .digital-grid {
+    .film-extra-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+    .digital-grid-vertical {
         grid-template-columns: repeat(2, 1fr);
-        gap: 3px;
+        gap: 10px;
+        padding: 0 10px;
     }
     .statement {
         padding: 30px 20px;
@@ -368,5 +416,18 @@ footer {
     .placeholder-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+    }
+}
+
+/* Для очень широких экранов */
+@media (min-width: 1400px) {
+    .triptych {
+        max-width: 1400px;
+    }
+    .film-extra-grid {
+        max-width: 1000px;
+    }
+    .digital-grid-vertical {
+        max-width: 1200px;
     }
 }

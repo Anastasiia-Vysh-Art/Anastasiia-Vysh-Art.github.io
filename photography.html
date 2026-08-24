@@ -78,7 +78,7 @@
                 <div class="photo-meta">#Limerick #2024 #Digital</div>
             </div>
 
-            <!-- Monumental (з нулем) -->
+            <!-- Monumental -->
             <div class="film-photo-item">
                 <img src="images/mfilm_01.jpg" alt="Monumental, frame 1" class="clickable">
                 <div class="photo-meta">#Limerick #2025 #Film</div>
@@ -128,17 +128,16 @@
         <p data-lang="uk" style="display:none;">© 2026 anastasiia.vysh.art · Сайт на GitHub Pages</p>
     </footer>
 
-    <!-- Модальне вікно -->
     <div id="modal" class="modal">
         <span class="modal-close">&times;</span>
         <img class="modal-content" id="modal-img">
     </div>
 
     <script>
-        // Перемикач мов
         document.addEventListener('DOMContentLoaded', function() {
             const langBtn = document.getElementById('lang-switch');
             let currentLang = 'en';
+
             langBtn.addEventListener('click', function() {
                 if (currentLang === 'en') {
                     currentLang = 'uk';
@@ -147,6 +146,7 @@
                     currentLang = 'en';
                     langBtn.textContent = 'UA';
                 }
+
                 document.querySelectorAll('[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === currentLang) {
                         el.style.display = '';
@@ -154,6 +154,7 @@
                         el.style.display = 'none';
                     }
                 });
+
                 document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === currentLang) {
                         el.style.display = '';
@@ -164,34 +165,31 @@
             });
         });
 
-        // Модальне вікно
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('modal');
-            const modalImg = document.getElementById('modal-img');
-            const closeBtn = document.querySelector('.modal-close');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeBtn = document.querySelector('.modal-close');
 
-            document.querySelectorAll('.clickable').forEach(img => {
-                img.addEventListener('click', function(e) {
-                    modal.style.display = 'flex';
-                    modalImg.src = this.src;
-                });
+        document.querySelectorAll('.clickable').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = 'flex';
+                modalImg.src = this.src;
             });
+        });
 
-            closeBtn.addEventListener('click', function() {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
                 modal.style.display = 'none';
-            });
+            }
+        });
 
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.style.display === 'flex') {
-                    modal.style.display = 'none';
-                }
-            });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            }
         });
     </script>
 

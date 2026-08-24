@@ -29,7 +29,6 @@
     </nav>
 
     <section class="project-section">
-
         <div class="project-intro">
             <h2 data-lang="en">Monumental</h2>
             <h2 data-lang="uk" style="display:none;">Монументальне</h2>
@@ -57,50 +56,53 @@
             </p>
         </div>
 
-        <!-- Нова сітка: перші два вертикальні, решта горизонтальні -->
-        <div class="monumental-grid">
-            <!-- Вертикальні (перші два) -->
-            <div class="monumental-item vertical" onclick="openLightbox(this)">
-                <img src="images/mfilm_1.jpg" alt="Monumental, frame 1">
-                <div class="photo-meta">#Limerick #2025 #Film</div>
-            </div>
-            <div class="monumental-item vertical" onclick="openLightbox(this)">
-                <img src="images/mfilm_2.jpg" alt="Monumental, frame 2">
-                <div class="photo-meta">#Limerick #2025 #Film</div>
-            </div>
+        <div class="film-block">
+            <h3 data-lang="en">Series</h3>
+            <h3 data-lang="uk" style="display:none;">Серія</h3>
+            <div class="monumental-grid">
+                <!-- Два вертикальних фото (перша строчка) -->
+                <div class="monumental-item vertical">
+                    <img src="images/mfilm_01.jpg" alt="Monumental, frame 1" class="clickable">
+                    <div class="photo-meta">#Limerick #2025 #Film</div>
+                </div>
+                <div class="monumental-item vertical">
+                    <img src="images/mfilm_02.jpg" alt="Monumental, frame 2" class="clickable">
+                    <div class="photo-meta">#Limerick #2025 #Film</div>
+                </div>
 
-            <!-- Горизонтальні (решта) -->
-            <div class="monumental-item horizontal" onclick="openLightbox(this)">
-                <img src="images/mfilm_3.jpg" alt="Monumental, frame 3">
-                <div class="photo-meta">#Limerick #2025 #Film</div>
-            </div>
-            <div class="monumental-item horizontal" onclick="openLightbox(this)">
-                <img src="images/mfilm_4.jpg" alt="Monumental, frame 4">
-                <div class="photo-meta">#Limerick #2025 #Film</div>
-            </div>
-            <div class="monumental-item horizontal" onclick="openLightbox(this)">
-                <img src="images/mfilm_5.jpg" alt="Monumental, frame 5">
-                <div class="photo-meta">#Limerick #2025 #Film</div>
-            </div>
-            <div class="monumental-item horizontal" onclick="openLightbox(this)">
-                <img src="images/mfilm_6.jpg" alt="Monumental, frame 6">
-                <div class="photo-meta">#Limerick #2025 #Film</div>
-            </div>
-            <div class="monumental-item horizontal" onclick="openLightbox(this)">
-                <img src="images/mfilm_7.jpg" alt="Monumental, frame 7">
-                <div class="photo-meta">#Limerick #2025 #Film</div>
-            </div>
-            <div class="monumental-item horizontal" onclick="openLightbox(this)">
-                <img src="images/mfilm_8.jpg" alt="Monumental, frame 8">
-                <div class="photo-meta">#Limerick #2025 #Film</div>
-            </div>
-            <div class="monumental-item horizontal" onclick="openLightbox(this)">
-                <img src="images/mfilm_9.jpg" alt="Monumental, frame 9">
-                <div class="photo-meta">#Limerick #2025 #Film</div>
-            </div>
-            <div class="monumental-item horizontal" onclick="openLightbox(this)">
-                <img src="images/mfilm_10.jpg" alt="Monumental, frame 10">
-                <div class="photo-meta">#Limerick #2025 #Film</div>
+                <!-- Інші (горизонтальні) — 8 фото -->
+                <div class="monumental-item horizontal">
+                    <img src="images/mfilm_03.jpg" alt="Monumental, frame 3" class="clickable">
+                    <div class="photo-meta">#Limerick #2025 #Film</div>
+                </div>
+                <div class="monumental-item horizontal">
+                    <img src="images/mfilm_04.jpg" alt="Monumental, frame 4" class="clickable">
+                    <div class="photo-meta">#Limerick #2025 #Film</div>
+                </div>
+                <div class="monumental-item horizontal">
+                    <img src="images/mfilm_05.jpg" alt="Monumental, frame 5" class="clickable">
+                    <div class="photo-meta">#Limerick #2025 #Film</div>
+                </div>
+                <div class="monumental-item horizontal">
+                    <img src="images/mfilm_06.jpg" alt="Monumental, frame 6" class="clickable">
+                    <div class="photo-meta">#Limerick #2025 #Film</div>
+                </div>
+                <div class="monumental-item horizontal">
+                    <img src="images/mfilm_07.jpg" alt="Monumental, frame 7" class="clickable">
+                    <div class="photo-meta">#Limerick #2025 #Film</div>
+                </div>
+                <div class="monumental-item horizontal">
+                    <img src="images/mfilm_08.jpg" alt="Monumental, frame 8" class="clickable">
+                    <div class="photo-meta">#Limerick #2025 #Film</div>
+                </div>
+                <div class="monumental-item horizontal">
+                    <img src="images/mfilm_09.jpg" alt="Monumental, frame 9" class="clickable">
+                    <div class="photo-meta">#Limerick #2025 #Film</div>
+                </div>
+                <div class="monumental-item horizontal">
+                    <img src="images/mfilm_10.jpg" alt="Monumental, frame 10" class="clickable">
+                    <div class="photo-meta">#Limerick #2025 #Film</div>
+                </div>
             </div>
         </div>
 
@@ -132,7 +134,6 @@
                 як тягнуться тіні, як бетон може втримати мить, якщо ми достатньо уважні, щоб її побачити.
             </p>
         </div>
-
     </section>
 
     <footer>
@@ -140,10 +141,10 @@
         <p data-lang="uk" style="display:none;">© 2026 anastasiia.vysh.art · Сайт на GitHub Pages</p>
     </footer>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close-btn">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+    <!-- Модальне вікно -->
+    <div id="modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img">
     </div>
 
     <script>
@@ -151,7 +152,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             const langBtn = document.getElementById('lang-switch');
             let currentLang = 'en';
-
             langBtn.addEventListener('click', function() {
                 if (currentLang === 'en') {
                     currentLang = 'uk';
@@ -160,7 +160,6 @@
                     currentLang = 'en';
                     langBtn.textContent = 'UA';
                 }
-
                 document.querySelectorAll('[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === currentLang) {
                         el.style.display = '';
@@ -168,7 +167,6 @@
                         el.style.display = 'none';
                     }
                 });
-
                 document.querySelectorAll('.nav-menu a[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === currentLang) {
                         el.style.display = '';
@@ -179,27 +177,34 @@
             });
         });
 
-        // Lightbox
-        function openLightbox(element) {
-            const img = element.querySelector('img');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = img.src;
-            lightbox.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        }
+        // Модальне вікно
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            const closeBtn = document.querySelector('.modal-close');
 
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
+            document.querySelectorAll('.clickable').forEach(img => {
+                img.addEventListener('click', function(e) {
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                });
+            });
 
-        // Закриття по Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                }
+            });
         });
     </script>
 

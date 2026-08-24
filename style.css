@@ -81,122 +81,12 @@ body {
 }
 
 /* ====================================================== */
-/* ====== ГЕРОЙ З ТРИПТИХОМ (ГОЛОВНА СТОРІНКА) ====== */
-/* ====================================================== */
-
-.hero-triptych {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    position: relative;
-    background: #000;
-    min-height: 80vh;
-    overflow: hidden;
-}
-
-.hero-triptych img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-    opacity: 0.85;
-    transition: transform 0.6s ease;
-}
-
-.hero-triptych img:hover {
-    transform: scale(1.02);
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.45);
-    color: #fff;
-    padding: 20px;
-    pointer-events: none;
-}
-
-.hero-overlay h1 {
-    font-size: 4.5rem;
-    font-weight: 300;
-    letter-spacing: 10px;
-    margin-bottom: 10px;
-    color: #fff;
-    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.9);
-}
-
-.hero-overlay .subtitle {
-    font-size: 1.3rem;
-    color: #eee;
-    letter-spacing: 4px;
-    font-weight: 300;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9);
-}
-
-.hero-overlay .hero-line {
-    width: 60px;
-    height: 2px;
-    background: #fff;
-    margin: 20px auto;
-}
-
-.hero-overlay .hero-desc {
-    font-size: 1.1rem;
-    color: #ddd;
-    letter-spacing: 2px;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9);
-}
-
-.hero-overlay .hero-themes {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #ccc;
-    letter-spacing: 2px;
-}
-
-.hero-overlay .hero-themes span {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 4px 16px;
-    border-radius: 30px;
-    margin: 0 4px;
-    display: inline-block;
-}
-
-.hero-overlay .btn {
-    display: inline-block;
-    margin-top: 30px;
-    background: #fff;
-    color: #111;
-    padding: 16px 60px;
-    text-decoration: none;
-    letter-spacing: 3px;
-    border-radius: 40px;
-    transition: background 0.3s, transform 0.2s;
-    pointer-events: auto;
-    border: none;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-}
-
-.hero-overlay .btn:hover {
-    background: #ddd;
-    transform: scale(1.03);
-}
-
-/* ====================================================== */
-/* ====== СТАНДАРТНИЙ ГЕРОЙ (для інших сторінок, якщо використовується) ====== */
+/* ====== ГЕРОЙ ====== */
 /* ====================================================== */
 
 .hero {
     background: #ffffff;
-    padding: 140px 20px 120px;
+    padding: 140px 20px 100px;
     text-align: center;
     border-bottom: 1px solid #f0f0f0;
 }
@@ -266,263 +156,42 @@ body {
 }
 
 /* ====================================================== */
-/* ====== СЕКЦІЇ (загальні) ====== */
+/* ====== ТРИПТИХ НА ГОЛОВНІЙ ====== */
 /* ====================================================== */
 
-.section {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 80px 30px;
-}
-
-.alt-bg {
-    background: #f4f4f2;
-    border-radius: 0;
-    margin: 0;
-    padding: 80px 30px;
-}
-
-.section h2 {
-    font-size: 3rem;
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* ====================================================== */
-/* ====== ПРОЄКТ "ЧОРНИЙ ЛЕБІДЬ" ====== */
-/* ====================================================== */
-
-.project-section {
-    padding: 0;
-    max-width: 100%;
-}
-
-.project-intro {
-    max-width: 900px;
-    margin: 0 auto 60px;
-    padding: 0 30px;
-    padding-top: 70px;
-    text-align: center;
-}
-
-.project-intro h2 {
-    font-size: 3.5rem;
-    font-weight: 300;
-    letter-spacing: 6px;
-    margin-bottom: 20px;
-}
-
-.intro-text {
-    font-size: 1.2rem;
-    color: #444;
-    line-height: 1.9;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-}
-
-.film-block h3,
-.film-extra h3,
-.digital-block h3 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-align: center;
-    margin-bottom: 20px;
+.featured-project {
+    max-width: 1400px;
+    margin: 40px auto 60px;
     padding: 0 20px;
 }
 
-/* --- ТРИПТИХ --- */
-.film-block {
-    margin-bottom: 60px;
-}
-
-.triptych {
+.featured-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
-.triptych-item {
+.featured-item {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.featured-item img {
+    width: 100%;
     aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #f8f8f6;
-}
-
-.triptych-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-}
-
-/* --- ДОДАТКОВІ ПЛІВКОВІ --- */
-.film-extra {
-    margin-bottom: 60px;
-}
-
-.film-extra-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.film-extra-item {
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    background: #f8f8f6;
-}
-
-.film-extra-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-}
-
-/* --- ЦИФРОВА СЕРІЯ --- */
-.digital-block {
-    margin-bottom: 60px;
-}
-
-.digital-flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.digital-item {
-    flex: 0 0 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    background: #f8f8f6;
-}
-
-.digital-item img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-/* --- ARTIST STATEMENT --- */
-.statement {
-    max-width: 900px;
-    margin: 60px auto 0;
-    padding: 50px 40px;
-    background: #fafafa;
-    border-left: 4px solid #111;
-}
-
-.statement h4 {
-    font-size: 1rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #888;
-    margin-bottom: 15px;
-}
-
-.statement p {
-    font-size: 1.05rem;
-    line-height: 2;
-    color: #333;
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-}
-
-/* ====== КРЕДИТ ====== */
-.credit {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #888;
-    letter-spacing: 1px;
-    margin-top: 40px;
-    padding: 0 20px;
-}
-
-/* ====================================================== */
-/* ====== СТОРІНКА MONUMENTAL ====== */
-/* ====================================================== */
-
-.monumental-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.monumental-item {
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    background: #f8f8f6;
-}
-
-.monumental-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
     display: block;
 }
 
 /* ====================================================== */
-/* ====== ЗАГАЛЬНА ГАЛЕРЕЯ (PHOTOGRAPHY) ====== */
-/* ====================================================== */
-
-.film-photography-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.film-photo-item {
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    background: #f8f8f6;
-}
-
-.film-photo-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-}
-
-/* ====== ТЕГИ ДЛЯ ФОТО (ХЕШТЕГИ) ====== */
-.photo-meta {
-    font-size: 0.75rem;
-    color: #999;
-    letter-spacing: 0.5px;
-    text-align: center;
-    margin-top: 6px;
-    padding: 0 4px;
-    font-weight: 300;
-}
-
-/* ====================================================== */
-/* ====== ВИТРИНА ПРОЄКТІВ (ГОЛОВНА) ====== */
+/* ====== ВИТРИНА ПРОЄКТІВ ====== */
 /* ====================================================== */
 
 .projects-grid {
@@ -531,7 +200,7 @@ body {
     gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 60px 30px 80px;
+    padding: 0 30px 80px;
 }
 
 .project-card {
@@ -603,8 +272,301 @@ body {
 }
 
 /* ====================================================== */
-/* ====== ABOUT ====== */
+/* ====== СТОРІНКА MONUMENTAL (СІТКА) ====== */
 /* ====================================================== */
+
+.monumental-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.monumental-item {
+    overflow: hidden;
+    background: #f8f8f6;
+    margin-bottom: 0; /* забираємо нижній відступ, бо працює gap */
+}
+
+/* Перші два фото — вертикальні (займають по 50% ширини) */
+.monumental-item.vertical {
+    flex: 1 1 calc(50% - 20px);
+    aspect-ratio: 2 / 3;
+}
+
+/* Інші фото — горизонтальні (по 33.333% ширини) */
+.monumental-item.horizontal {
+    flex: 1 1 calc(33.333% - 20px);
+    aspect-ratio: 3 / 2;
+}
+
+.monumental-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.monumental-item img:hover {
+    transform: scale(1.02);
+}
+
+/* ====================================================== */
+/* ====== ЗАГАЛЬНА ГАЛЕРЕЯ (PHOTOGRAPHY) ====== */
+/* ====================================================== */
+
+.film-photography-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.film-photo-item {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #f8f8f6;
+}
+
+.film-photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.film-photo-item img:hover {
+    transform: scale(1.02);
+}
+
+/* ====== ТЕГИ (ХЕШТЕГИ) ====== */
+.photo-meta {
+    font-size: 0.75rem;
+    color: #999;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-top: 6px;
+    padding: 0 4px;
+    font-weight: 300;
+}
+
+/* ====================================================== */
+/* ====== СТОРІНКИ ПРОЄКТІВ (ЧОРНИЙ ЛЕБІДЬ, MONUMENTAL) ====== */
+/* ====================================================== */
+
+.project-section {
+    padding: 0;
+    max-width: 100%;
+}
+
+.project-intro {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 30px;
+    padding-top: 70px;
+    text-align: center;
+}
+
+.project-intro h2 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.9;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+.film-block h3,
+.film-extra h3,
+.digital-block h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+/* --- ТРИПТИХ (Чорний лебідь) --- */
+.film-block {
+    margin-bottom: 60px;
+}
+
+.triptych {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.triptych-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #f8f8f6;
+}
+
+.triptych-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.triptych-item img:hover {
+    transform: scale(1.02);
+}
+
+/* --- ДОДАТКОВІ ПЛІВКОВІ (Чорний лебідь) --- */
+.film-extra {
+    margin-bottom: 60px;
+}
+
+.film-extra-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.film-extra-item {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #f8f8f6;
+}
+
+.film-extra-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.film-extra-item img:hover {
+    transform: scale(1.02);
+}
+
+/* --- ЦИФРОВА СЕРІЯ (Чорний лебідь) --- */
+.digital-block {
+    margin-bottom: 60px;
+}
+
+.digital-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.digital-item {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #f8f8f6;
+}
+
+.digital-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.digital-item img:hover {
+    transform: scale(1.02);
+}
+
+/* --- ARTIST STATEMENT --- */
+.statement {
+    max-width: 900px;
+    margin: 60px auto 0;
+    padding: 50px 40px;
+    background: #fafafa;
+    border-left: 4px solid #111;
+}
+
+.statement h4 {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.statement p {
+    font-size: 1.05rem;
+    line-height: 2;
+    color: #333;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+/* ====== КРЕДИТ ====== */
+.credit {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 1px;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+/* ====================================================== */
+/* ====== ABOUT (на головній) ====== */
+/* ====================================================== */
+
+.section {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 80px 30px;
+}
+
+.alt-bg {
+    background: #f4f4f2;
+    border-radius: 0;
+    margin: 0;
+    padding: 80px 30px;
+}
+
+.section h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
 .about-wrapper {
     max-width: 700px;
@@ -628,6 +590,50 @@ body {
 }
 
 /* ====================================================== */
+/* ====== МОДАЛЬНЕ ВІКНО (ЗБІЛЬШЕННЯ ФОТО) ====== */
+/* ====================================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: 0.2s;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: #ccc;
+    transform: scale(1.2);
+}
+
+/* ====================================================== */
 /* ====== ПІДВАЛ ====== */
 /* ====================================================== */
 
@@ -645,7 +651,6 @@ footer {
 /* ====================================================== */
 
 @media (max-width: 768px) {
-    /* Навігація */
     .nav-container {
         flex-direction: column;
         gap: 10px;
@@ -655,34 +660,33 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
-
-    /* Герой з триптихом */
-    .hero-triptych {
-        grid-template-columns: 1fr;
-        min-height: 70vh;
-    }
-    .hero-triptych img {
-        height: 70vh;
-    }
-    .hero-overlay h1 {
-        font-size: 2.8rem;
+    .hero h1 {
+        font-size: 3.2rem;
         letter-spacing: 6px;
     }
-    .hero-overlay .subtitle {
-        font-size: 1rem;
-        letter-spacing: 2px;
+    .hero {
+        padding: 100px 20px 60px;
     }
-    .hero-overlay .btn {
-        padding: 12px 40px;
-        font-size: 0.9rem;
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
-
-    /* Сторінки проєктів */
-    .project-intro h2 {
-        font-size: 2.5rem;
+    .featured-item img {
+        aspect-ratio: 16 / 9;
     }
-    .intro-text {
-        font-size: 1.05rem;
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding: 40px 16px 60px;
+    }
+    .project-card h3 {
+        font-size: 1.1rem;
+    }
+    .section h2 {
+        font-size: 2.2rem;
+    }
+    .about-wrapper {
+        text-align: left;
     }
     .triptych {
         grid-template-columns: 1fr;
@@ -700,33 +704,34 @@ footer {
     .statement {
         padding: 30px 20px;
     }
-
-    /* Загальне */
-    .section h2 {
-        font-size: 2.2rem;
+    .project-intro h2 {
+        font-size: 2.5rem;
     }
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-        padding: 40px 16px 60px;
-    }
-    .project-card h3 {
-        font-size: 1.1rem;
+    .intro-text {
+        font-size: 1.05rem;
     }
     .film-photography-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
         padding: 0 10px;
     }
+    /* Monumental сітка на планшеті */
+    .monumental-item.vertical {
+        flex: 1 1 calc(50% - 10px);
+        aspect-ratio: 2 / 3;
+    }
+    .monumental-item.horizontal {
+        flex: 1 1 calc(50% - 10px);
+        aspect-ratio: 3 / 2;
+    }
     .monumental-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
+        gap: 12px;
         padding: 0 10px;
     }
-    .intro-text,
-    .statement p,
-    .about-wrapper {
-        text-align: left;
+    .modal-close {
+        top: 20px;
+        right: 30px;
+        font-size: 2.5rem;
     }
 }
 
@@ -749,9 +754,13 @@ footer {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
-    .monumental-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+    .monumental-item.vertical {
+        flex: 1 1 100%;
+        aspect-ratio: 2 / 3;
+    }
+    .monumental-item.horizontal {
+        flex: 1 1 100%;
+        aspect-ratio: 3 / 2;
     }
 }
 

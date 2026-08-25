@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>anastasiia.vysh.art</title>
-    <meta name="description" content="Портфоліо мультидисциплінарної художниці. Чорний лебідь, плівкова фотографія, відео, інсталяції.">
+    
+    <!-- Open Graph теги (оновлюються через JS) -->
+    <meta property="og:title" content="anastasiia.vysh.art">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Anastasiia-Vysh-Art.github.io">
+    <meta property="og:image" content="https://Anastasiia-Vysh-Art.github.io/images/BS_film1.jpg">
+    <meta id="og-description" property="og:description" content="Multidisciplinary artist portfolio. Photography, video, installation, projection mapping. Migration, war, propaganda, identity.">
+    <meta name="description" id="meta-description" content="Multidisciplinary artist portfolio. Photography, video, installation, projection mapping. Migration, war, propaganda, identity.">
+
     <link rel="icon" href="favicon.ico?v=2" sizes="any">
     <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
@@ -82,6 +90,7 @@
                 arrived in Ireland in 2022. My work examines migration, war, propaganda, 
                 and identity through photography, video, installation, and projection mapping.
                 <br><br>
+                <strong>Email:</strong> <a href="mailto:anastasiiavyshart@gmail.com">anastasiiavyshart@gmail.com</a><br>
                 <strong>Socials:</strong> 
                 <a href="https://instagram.com/anastasiia.vysh.art" target="_blank">Instagram</a>
             </p>
@@ -92,6 +101,7 @@
                 міграцію, війну, пропаганду та ідентичність через фотографію, 
                 відео, інсталяції та проєкційний мапінг.
                 <br><br>
+                <strong>Email:</strong> <a href="mailto:anastasiiavyshart@gmail.com">anastasiiavyshart@gmail.com</a><br>
                 <strong>Соцмережі:</strong> 
                 <a href="https://instagram.com/anastasiia.vysh.art" target="_blank">Instagram</a>
             </p>
@@ -109,6 +119,7 @@
             let currentLang = localStorage.getItem('lang') || 'en';
 
             function applyLanguage(lang) {
+                // Перемикання тексту
                 document.querySelectorAll('[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === lang) {
                         el.style.display = '';
@@ -124,6 +135,17 @@
                     }
                 });
                 langBtn.textContent = lang === 'en' ? 'UA' : 'EN';
+
+                // Оновлення Open Graph та meta-тегів для прев'ю
+                const metaDesc = document.getElementById('meta-description');
+                const ogDesc = document.getElementById('og-description');
+                if (lang === 'en') {
+                    metaDesc.content = "Multidisciplinary artist portfolio. Photography, video, installation, projection mapping. Migration, war, propaganda, identity.";
+                    ogDesc.content = "Multidisciplinary artist portfolio. Photography, video, installation, projection mapping. Migration, war, propaganda, identity.";
+                } else {
+                    metaDesc.content = "Портфоліо мультидисциплінарної художниці. Фотографія, відео, інсталяції, проєкційний мапінг. Міграція, війна, пропаганда, ідентичність.";
+                    ogDesc.content = "Портфоліо мультидисциплінарної художниці. Фотографія, відео, інсталяції, проєкційний мапінг. Міграція, війна, пропаганда, ідентичність.";
+                }
             }
 
             applyLanguage(currentLang);

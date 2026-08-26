@@ -48,18 +48,9 @@
 
     <section class="project-section">
 
+        <!-- Заголовок та опис – звичайна ширина -->
         <div class="project-intro">
             <h2>The White Noise</h2>
-            <div class="video-container">
-                <iframe src="https://player.vimeo.com/video/1140136219" 
-                        width="100%" 
-                        height="100%" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-
             <p class="intro-text" data-lang="en">
                 In this two-channel video work, I reflect on the feeling of emptiness and futility that defines both personal and collective experience. The work emerged from my ongoing research into the meaninglessness and absurdity of war and the world around us.
                 <br><br>
@@ -80,6 +71,18 @@
             </p>
         </div>
 
+        <!-- ВІДЕО НА ВСЮ ШИРИНУ (винесено за межі project-intro) -->
+        <div class="video-container full-width">
+            <iframe src="https://player.vimeo.com/video/1140136219" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Artist Statement – знову в межах project-intro (або окремо) -->
         <div class="statement">
             <h4 data-lang="en">Artist Statement</h4>
             <h4 data-lang="uk" style="display:none;">Художнє висловлювання</h4>

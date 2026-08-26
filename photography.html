@@ -35,6 +35,7 @@
                         <li><a href="black-swan.html" data-lang="en">The Black Swan</a><a href="black-swan.html" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
                         <li><a href="monumental.html" data-lang="en">Monumental</a><a href="monumental.html" data-lang="uk" style="display:none;">Монументальне</a></li>
                         <li><a href="disrupt.html" data-lang="en">DISRUPT</a><a href="disrupt.html" data-lang="uk" style="display:none;">DISRUPT</a></li>
+                        <li><a href="white-noise.html" data-lang="en">The White Noise</a><a href="white-noise.html" data-lang="uk" style="display:none;">The White Noise</a></li>
                     </ul>
                 </li>
 
@@ -205,32 +206,39 @@
             });
         });
 
-        const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modal-img');
-        const closeBtn = document.querySelector('.modal-close');
+        (function() {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            const closeBtn = document.querySelector('.modal-close');
 
-        document.querySelectorAll('.clickable').forEach(img => {
-            img.addEventListener('click', function() {
-                modal.style.display = 'flex';
-                modalImg.src = this.src;
+            if (!modal) return;
+
+            document.querySelectorAll('.clickable').forEach(img => {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                });
             });
-        });
 
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                });
             }
-        });
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.style.display === 'flex') {
-                modal.style.display = 'none';
-            }
-        });
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                }
+            });
+        })();
     </script>
 
 </body>

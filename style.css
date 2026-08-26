@@ -224,28 +224,6 @@ body {
     display: inline-block;
 }
 
-.hero-overlay .btn {
-    display: inline-block;
-    margin-top: 30px;
-    background: #fff;
-    color: #111;
-    padding: 16px 60px;
-    text-decoration: none;
-    letter-spacing: 3px;
-    border-radius: 40px;
-    transition: background 0.3s, transform 0.2s;
-    pointer-events: auto;
-    border: none;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-}
-
-.hero-overlay .btn:hover {
-    background: #ddd;
-    transform: scale(1.03);
-}
-
 /* ====================================================== */
 /* ====== ВИТРИНА ПРОЄКТІВ (ГОЛОВНА) ====== */
 /* ====================================================== */
@@ -303,28 +281,6 @@ body {
     font-size: 0.9rem;
     color: #888;
     letter-spacing: 1px;
-}
-
-.project-card.coming-soon {
-    opacity: 0.5;
-    pointer-events: none;
-    cursor: default;
-}
-
-.project-card.coming-soon .project-thumb.placeholder {
-    background: #e8e8e6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    color: #aaa;
-    letter-spacing: 2px;
-}
-
-.project-card.coming-soon .project-thumb.placeholder span {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 8px 20px;
-    border-radius: 30px;
 }
 
 /* ====================================================== */
@@ -394,6 +350,20 @@ body {
     font-weight: 300;
     letter-spacing: 6px;
     margin-bottom: 20px;
+}
+
+/* ----- БЕЙДЖ РОКУ ----- */
+.year-badge {
+    display: inline-block;
+    background: #eaeaea;
+    padding: 2px 14px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: 1px;
+    margin-left: 12px;
+    vertical-align: middle;
 }
 
 .intro-text {
@@ -696,6 +666,7 @@ body {
     height: 100%;
 }
 
+/* Відео на всю ширину (на головній та на сторінці проєкту) */
 .video-container.full-width {
     max-width: 100%;
     width: 100%;
@@ -703,10 +674,10 @@ body {
     margin: 20px 0;
 }
 
-.video-container.project-page {
-    max-width: 1000px;
-    margin: 30px auto;
-    border-radius: 4px;
+.video-container.featured {
+    max-width: 100%;
+    border-radius: 0;
+    margin: 20px 0;
 }
 
 .video-desc {
@@ -872,10 +843,6 @@ footer {
     .hero-overlay .subtitle {
         font-size: 1rem;
         letter-spacing: 2px;
-    }
-    .hero-overlay .btn {
-        padding: 12px 40px;
-        font-size: 0.9rem;
     }
 
     .projects-grid {

@@ -34,6 +34,7 @@
                         <li><a href="black-swan.html" data-lang="en">The Black Swan</a><a href="black-swan.html" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
                         <li><a href="monumental.html" data-lang="en">Monumental</a><a href="monumental.html" data-lang="uk" style="display:none;">Монументальне</a></li>
                         <li><a href="disrupt.html" data-lang="en">DISRUPT</a><a href="disrupt.html" data-lang="uk" style="display:none;">DISRUPT</a></li>
+                        <li><a href="absence.html" data-lang="en">My idea of absence</a><a href="absence.html" data-lang="uk" style="display:none;">Моя ідея відсутності</a></li>
                     </ul>
                 </li>
 
@@ -101,14 +102,16 @@
             </a>
         </div>
 
-        <div class="project-card coming-soon">
-            <div class="project-thumb placeholder">
-                <span>Coming Soon</span>
-            </div>
-            <h3 data-lang="en">New Project</h3>
-            <h3 data-lang="uk" style="display:none;">Новий проєкт</h3>
-            <p data-lang="en">In progress</p>
-            <p data-lang="uk" style="display:none;">В роботі</p>
+        <div class="project-card">
+            <a href="absence.html">
+                <div class="project-thumb">
+                    <img src="images/absence_thumb.jpg" alt="My idea of absence">
+                </div>
+                <h3 data-lang="en">My idea of absence</h3>
+                <h3 data-lang="uk" style="display:none;">Моя ідея відсутності</h3>
+                <p data-lang="en">Two-channel video · 2024</p>
+                <p data-lang="uk" style="display:none;">Дворканальне відео · 2024</p>
+            </a>
         </div>
     </section>
 
@@ -137,6 +140,31 @@
                 <strong>Соцмережі:</strong> 
                 <a href="https://instagram.com/anastasiia.vysh.art" target="_blank">Instagram</a>
             </p>
+        </div>
+    </section>
+
+    <!-- ====== ВІДЕО ВНИЗУ ГОЛОВНОЇ ====== -->
+    <section class="section featured-video">
+        <h2 data-lang="en">My idea of absence</h2>
+        <h2 data-lang="uk" style="display:none;">Моя ідея відсутності</h2>
+        <p class="video-desc" data-lang="en">
+            Two-channel video work exploring emptiness, repetition, and the void between personal and collective experience.
+        </p>
+        <p class="video-desc" data-lang="uk" style="display:none;">
+            Дворканальна відеоробота про порожнечу, повторення та порожнечу між особистим і колективним досвідом.
+        </p>
+        <div class="video-container featured">
+            <iframe src="https://player.vimeo.com/video/1140136219" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <div class="video-footer">
+            <a href="absence.html" class="btn-secondary" data-lang="en">View full project →</a>
+            <a href="absence.html" class="btn-secondary" data-lang="uk" style="display:none;">Дивитись повний проєкт →</a>
         </div>
     </section>
 
@@ -195,7 +223,6 @@
             });
         });
 
-        // Для мобільного відкриття dropdown
         document.querySelectorAll('.dropbtn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();

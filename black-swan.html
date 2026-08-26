@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Black Swan · anastasiia.vysh.art</title>
     <meta name="description" content="The Black Swan — photography series by Anastasiia Vyshnevska. Migration, black swan theory, University of Limerick.">
+    
+    <meta property="og:title" content="The Black Swan · anastasiia.vysh.art">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Anastasiia-Vysh-Art.github.io/black-swan.html">
+    <meta property="og:image" content="https://Anastasiia-Vysh-Art.github.io/images/BS_film1.jpg">
+    <meta id="og-description" property="og:description" content="The Black Swan — photography series exploring migration, black swan theory, and the architecture of arrival.">
+    <meta name="description" id="meta-description" content="The Black Swan — photography series exploring migration, black swan theory, and the architecture of arrival.">
+
     <link rel="icon" href="favicon.ico?v=2" sizes="any">
     <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
@@ -19,8 +27,17 @@
             <a href="index.html" class="logo">anastasiia.vysh.art</a>
             <ul class="nav-menu">
                 <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="uk" style="display:none;">Головна</a></li>
-                <li><a href="black-swan.html" data-lang="en">The Black Swan</a><a href="black-swan.html" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
-                <li><a href="monumental.html" data-lang="en">Monumental</a><a href="monumental.html" data-lang="uk" style="display:none;">Монументальне</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" data-lang="en" class="dropbtn">Projects ▾</a>
+                    <a href="#" data-lang="uk" class="dropbtn" style="display:none;">Проєкти ▾</a>
+                    <ul class="dropdown-content">
+                        <li><a href="black-swan.html" data-lang="en">The Black Swan</a><a href="black-swan.html" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
+                        <li><a href="monumental.html" data-lang="en">Monumental</a><a href="monumental.html" data-lang="uk" style="display:none;">Монументальне</a></li>
+                        <li><a href="disrupt.html" data-lang="en">DISRUPT</a><a href="disrupt.html" data-lang="uk" style="display:none;">DISRUPT</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="photography.html" data-lang="en">Photography</a><a href="photography.html" data-lang="uk" style="display:none;">Фотографія</a></li>
                 <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="uk" style="display:none;">Про мене</a></li>
                 <li><button id="lang-switch" class="lang-btn">UA</button></li>
@@ -182,7 +199,24 @@
                         el.style.display = 'none';
                     }
                 });
+                document.querySelectorAll('.dropdown-content a[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
                 langBtn.textContent = lang === 'en' ? 'UA' : 'EN';
+
+                const metaDesc = document.getElementById('meta-description');
+                const ogDesc = document.getElementById('og-description');
+                if (lang === 'en') {
+                    metaDesc.content = "The Black Swan — photography series exploring migration, black swan theory, and the architecture of arrival.";
+                    ogDesc.content = "The Black Swan — photography series exploring migration, black swan theory, and the architecture of arrival.";
+                } else {
+                    metaDesc.content = "Чорний лебідь — фотографічна серія про міграцію, теорію чорного лебедя та архітектуру прибуття.";
+                    ogDesc.content = "Чорний лебідь — фотографічна серія про міграцію, теорію чорного лебедя та архітектуру прибуття.";
+                }
             }
 
             applyLanguage(currentLang);
@@ -195,7 +229,14 @@
             });
         });
 
-        // Модальне вікно
+        document.querySelectorAll('.dropbtn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const parent = this.closest('.dropdown');
+                parent.classList.toggle('active');
+            });
+        });
+
         const modal = document.getElementById('modal');
         const modalImg = document.getElementById('modal-img');
         const closeBtn = document.querySelector('.modal-close');

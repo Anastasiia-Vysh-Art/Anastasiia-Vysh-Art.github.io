@@ -81,6 +81,60 @@ body {
 }
 
 /* ====================================================== */
+/* ====== ВИПАДАЮЧИЙ СПИСОК (DROPDOWN) ====== */
+/* ====================================================== */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    min-width: 200px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 8px 0;
+    z-index: 200;
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-content li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    color: #444;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+    border-bottom: none !important;
+}
+
+.dropdown-content a:hover {
+    background: #f4f4f2;
+    color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ====================================================== */
 /* ====== ГЕРОЙ З ТРИПТИХОМ (ГОЛОВНА) ====== */
 /* ====================================================== */
 
@@ -544,6 +598,38 @@ body {
 }
 
 /* ====================================================== */
+/* ====== СТОРІНКА DISRUPT (СІТКА) ====== */
+/* ====================================================== */
+
+.disrupt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.disrupt-item {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #f8f8f6;
+}
+
+.disrupt-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.disrupt-item img:hover {
+    transform: scale(1.02);
+}
+
+/* ====================================================== */
 /* ====== ЗАГАЛЬНА ГАЛЕРЕЯ (PHOTOGRAPHY) ====== */
 /* ====================================================== */
 
@@ -659,6 +745,28 @@ footer {
         justify-content: center;
     }
 
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding: 0;
+        backdrop-filter: none;
+    }
+    .dropdown-content a {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+    .dropdown-content {
+        display: none;
+    }
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
     .hero-triptych {
         grid-template-columns: 1fr;
         min-height: 70vh;
@@ -743,6 +851,12 @@ footer {
         padding: 0 10px;
     }
 
+    .disrupt-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 10px;
+    }
+
     .modal-close {
         top: 20px;
         right: 30px;
@@ -785,6 +899,11 @@ footer {
         flex: 1 1 100%;
         aspect-ratio: 3 / 2;
     }
+
+    .disrupt-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -801,6 +920,9 @@ footer {
         max-width: 1400px;
     }
     .monumental-grid {
+        max-width: 1400px;
+    }
+    .disrupt-grid {
         max-width: 1400px;
     }
 }

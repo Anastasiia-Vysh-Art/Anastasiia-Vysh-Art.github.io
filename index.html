@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>anastasiia.vysh.art</title>
     
-    <!-- Open Graph теги (оновлюються через JS) -->
     <meta property="og:title" content="anastasiia.vysh.art">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://Anastasiia-Vysh-Art.github.io">
@@ -27,8 +26,17 @@
             <a href="index.html" class="logo">anastasiia.vysh.art</a>
             <ul class="nav-menu">
                 <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="uk" style="display:none;">Головна</a></li>
-                <li><a href="black-swan.html" data-lang="en">The Black Swan</a><a href="black-swan.html" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
-                <li><a href="monumental.html" data-lang="en">Monumental</a><a href="monumental.html" data-lang="uk" style="display:none;">Монументальне</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" data-lang="en" class="dropbtn">Projects ▾</a>
+                    <a href="#" data-lang="uk" class="dropbtn" style="display:none;">Проєкти ▾</a>
+                    <ul class="dropdown-content">
+                        <li><a href="black-swan.html" data-lang="en">The Black Swan</a><a href="black-swan.html" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
+                        <li><a href="monumental.html" data-lang="en">Monumental</a><a href="monumental.html" data-lang="uk" style="display:none;">Монументальне</a></li>
+                        <li><a href="disrupt.html" data-lang="en">DISRUPT</a><a href="disrupt.html" data-lang="uk" style="display:none;">DISRUPT</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="photography.html" data-lang="en">Photography</a><a href="photography.html" data-lang="uk" style="display:none;">Фотографія</a></li>
                 <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="uk" style="display:none;">Про мене</a></li>
                 <li><button id="lang-switch" class="lang-btn">UA</button></li>
@@ -60,6 +68,18 @@
 
     <section class="projects-grid">
         <div class="project-card">
+            <a href="black-swan.html">
+                <div class="project-thumb">
+                    <img src="images/BS_film1.jpg" alt="The Black Swan">
+                </div>
+                <h3 data-lang="en">The Black Swan</h3>
+                <h3 data-lang="uk" style="display:none;">Чорний лебідь</h3>
+                <p data-lang="en">Photography series · 2024</p>
+                <p data-lang="uk" style="display:none;">Фотографічна серія · 2024</p>
+            </a>
+        </div>
+
+        <div class="project-card">
             <a href="monumental.html">
                 <div class="project-thumb">
                     <img src="images/mfilm_01.jpg" alt="Monumental">
@@ -69,6 +89,18 @@
                 <p data-lang="uk" style="display:none;">Плівкова фотографія · 2025</p>
             </a>
         </div>
+
+        <div class="project-card">
+            <a href="disrupt.html">
+                <div class="project-thumb">
+                    <img src="images/disrupt_01.jpg" alt="DISRUPT">
+                </div>
+                <h3>DISRUPT</h3>
+                <p data-lang="en">Projection series · 2024</p>
+                <p data-lang="uk" style="display:none;">Серія проєкцій · 2024</p>
+            </a>
+        </div>
+
         <div class="project-card coming-soon">
             <div class="project-thumb placeholder">
                 <span>Coming Soon</span>
@@ -119,7 +151,6 @@
             let currentLang = localStorage.getItem('lang') || 'en';
 
             function applyLanguage(lang) {
-                // Перемикання тексту
                 document.querySelectorAll('[data-lang]').forEach(el => {
                     if (el.getAttribute('data-lang') === lang) {
                         el.style.display = '';
@@ -134,9 +165,15 @@
                         el.style.display = 'none';
                     }
                 });
+                document.querySelectorAll('.dropdown-content a[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
                 langBtn.textContent = lang === 'en' ? 'UA' : 'EN';
 
-                // Оновлення Open Graph та meta-тегів для прев'ю
                 const metaDesc = document.getElementById('meta-description');
                 const ogDesc = document.getElementById('og-description');
                 if (lang === 'en') {
@@ -155,6 +192,15 @@
                 currentLang = nextLang;
                 localStorage.setItem('lang', nextLang);
                 applyLanguage(nextLang);
+            });
+        });
+
+        // Для мобільного відкриття dropdown
+        document.querySelectorAll('.dropbtn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const parent = this.closest('.dropdown');
+                parent.classList.toggle('active');
             });
         });
     </script>

@@ -352,18 +352,14 @@ body {
     margin-bottom: 20px;
 }
 
-/* ----- БЕЙДЖ РОКУ ----- */
-.year-badge {
-    display: inline-block;
-    background: #eaeaea;
-    padding: 2px 14px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: #555;
-    letter-spacing: 1px;
-    margin-left: 12px;
-    vertical-align: middle;
+/* ----- МЕТА-ДАНИ ПРОЄКТУ (РІК + КРАЇНА) ----- */
+.project-meta {
+    font-size: 1rem;
+    color: #888;
+    letter-spacing: 2px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    font-weight: 300;
 }
 
 .intro-text {
@@ -666,7 +662,6 @@ body {
     height: 100%;
 }
 
-/* Відео на всю ширину (на головній та на сторінці проєкту) */
 .video-container.full-width {
     max-width: 100%;
     width: 100%;
@@ -866,6 +861,11 @@ footer {
     }
     .intro-text {
         font-size: 1.05rem;
+    }
+    .project-meta {
+        font-size: 0.9rem;
+        margin-top: -5px;
+        margin-bottom: 20px;
     }
     .triptych {
         grid-template-columns: 1fr;

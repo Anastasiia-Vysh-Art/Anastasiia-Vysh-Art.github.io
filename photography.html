@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography · anastasiia.vysh.art</title>
     <meta name="description" content="Film and digital photography by Anastasiia Vyshnevska. Monumental series — urban landscape, light, texture, architecture.">
+    
+    <meta property="og:title" content="Photography · anastasiia.vysh.art">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Anastasiia-Vysh-Art.github.io/photography.html">
+    <meta property="og:image" content="https://Anastasiia-Vysh-Art.github.io/images/mfilm_01.jpg">
+    <meta id="og-description" property="og:description" content="Film and digital photography by Anastasiia Vyshnevska. Monumental series, urban landscape, light, texture, architecture.">
+    <meta name="description" id="meta-description" content="Film and digital photography by Anastasiia Vyshnevska. Monumental series, urban landscape, light, texture, architecture.">
+
     <link rel="icon" href="favicon.ico?v=2" sizes="any">
     <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
@@ -19,8 +27,17 @@
             <a href="index.html" class="logo">anastasiia.vysh.art</a>
             <ul class="nav-menu">
                 <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="uk" style="display:none;">Головна</a></li>
-                <li><a href="black-swan.html" data-lang="en">The Black Swan</a><a href="black-swan.html" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
-                <li><a href="monumental.html" data-lang="en">Monumental</a><a href="monumental.html" data-lang="uk" style="display:none;">Монументальне</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" data-lang="en" class="dropbtn">Projects ▾</a>
+                    <a href="#" data-lang="uk" class="dropbtn" style="display:none;">Проєкти ▾</a>
+                    <ul class="dropdown-content">
+                        <li><a href="black-swan.html" data-lang="en">The Black Swan</a><a href="black-swan.html" data-lang="uk" style="display:none;">Чорний лебідь</a></li>
+                        <li><a href="monumental.html" data-lang="en">Monumental</a><a href="monumental.html" data-lang="uk" style="display:none;">Монументальне</a></li>
+                        <li><a href="disrupt.html" data-lang="en">DISRUPT</a><a href="disrupt.html" data-lang="uk" style="display:none;">DISRUPT</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="photography.html" data-lang="en">Photography</a><a href="photography.html" data-lang="uk" style="display:none;">Фотографія</a></li>
                 <li><a href="about.html" data-lang="en">About</a><a href="about.html" data-lang="uk" style="display:none;">Про мене</a></li>
                 <li><button id="lang-switch" class="lang-btn">UA</button></li>
@@ -150,7 +167,24 @@
                         el.style.display = 'none';
                     }
                 });
+                document.querySelectorAll('.dropdown-content a[data-lang]').forEach(el => {
+                    if (el.getAttribute('data-lang') === lang) {
+                        el.style.display = '';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
                 langBtn.textContent = lang === 'en' ? 'UA' : 'EN';
+
+                const metaDesc = document.getElementById('meta-description');
+                const ogDesc = document.getElementById('og-description');
+                if (lang === 'en') {
+                    metaDesc.content = "Film and digital photography by Anastasiia Vyshnevska. Monumental series, urban landscape, light, texture, architecture.";
+                    ogDesc.content = "Film and digital photography by Anastasiia Vyshnevska. Monumental series, urban landscape, light, texture, architecture.";
+                } else {
+                    metaDesc.content = "Плівкова та цифрова фотографія Анастасії Вишневської. Серія Monumental, міський ландшафт, світло, текстура, архітектура.";
+                    ogDesc.content = "Плівкова та цифрова фотографія Анастасії Вишневської. Серія Monumental, міський ландшафт, світло, текстура, архітектура.";
+                }
             }
 
             applyLanguage(currentLang);
@@ -160,6 +194,14 @@
                 currentLang = nextLang;
                 localStorage.setItem('lang', nextLang);
                 applyLanguage(nextLang);
+            });
+        });
+
+        document.querySelectorAll('.dropbtn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const parent = this.closest('.dropdown');
+                parent.classList.toggle('active');
             });
         });
 

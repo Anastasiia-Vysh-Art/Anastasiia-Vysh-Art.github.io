@@ -175,7 +175,7 @@
         <p data-lang="uk" style="display:none;">© 2026 anastasiia.vysh.art · Сайт на GitHub Pages</p>
     </footer>
 
-    <!-- Модальне вікно (один раз для всієї сторінки) -->
+    <!-- Модальне вікно -->
     <div id="modal" class="modal">
         <span class="modal-close">&times;</span>
         <img class="modal-content" id="modal-img">
@@ -231,7 +231,6 @@
             });
         });
 
-        // Для мобільного відкриття dropdown
         document.querySelectorAll('.dropbtn').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -240,7 +239,7 @@
             });
         });
 
-        // ====== МОДАЛЬНЕ ВІКНО (однакове для всіх проектів) ======
+        // ====== МОДАЛЬНЕ ВІКНО ======
         (function() {
             const modal = document.getElementById('modal');
             const modalImg = document.getElementById('modal-img');
@@ -248,7 +247,6 @@
 
             if (!modal) return;
 
-            // Відкриття по кліку на .clickable
             document.querySelectorAll('.clickable').forEach(img => {
                 img.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -257,21 +255,18 @@
                 });
             });
 
-            // Закриття по кнопці
             if (closeBtn) {
                 closeBtn.addEventListener('click', function() {
                     modal.style.display = 'none';
                 });
             }
 
-            // Закриття по кліку на фон
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) {
                     modal.style.display = 'none';
                 }
             });
 
-            // Закриття по Escape
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && modal.style.display === 'flex') {
                     modal.style.display = 'none';
